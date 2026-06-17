@@ -7,7 +7,12 @@ export const OPTIONS = preflight;
 // Saves to /public/uploads and returns { url } for use in create/update calls.
 export const POST = handler(async (request) => {
   requireAdmin(request);
-  const form = await request.formData();
+  let form;
+  try {
+    form = await request.formData();
+  } catch (e) {
+    return error('Invalid form data', 400);
+  }
   const file = form.get('file');
   if (!file) return error('No file provided');
   try {
