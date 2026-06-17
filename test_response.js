@@ -1,3 +1,3 @@
-import { NextResponse } from 'next/server';
-const res = NextResponse.json({ ok: true });
-console.log("Is Response?", res instanceof Response);
+const { NextResponse } = require('next/server');
+const res = NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+console.log(typeof res.status === 'number');

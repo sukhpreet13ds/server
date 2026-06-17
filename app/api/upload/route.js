@@ -9,7 +9,13 @@ export const POST = handler(async (request) => {
   requireAdmin(request);
   let form;
   try {
-    form = await request.formData();
+    const bodyBuffer = await request.arrayBuffer();
+    const newReq = new Request(request.url, {
+      method: 'POST',
+      headers: request.headers,
+      body: bodyBuffer,
+    });
+    form = await newReq.formData();
   } catch (e) {
     return error('Invalid form data', 400);
   }
