@@ -1,0 +1,220 @@
+// Del Zotto Concrete — data model
+// Datasource: MySQL. Client: Prisma JS client.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// Admin (single login, JWT auth)
+// ---------------------------------------------------------------------------
+model Admin {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Projects: (fixed) Category -> Subcategory -> Project -> ProjectImage
+//   Categories are FIXED (commercial-concrete / residential-concrete) and
+//   hardcoded on projects.html — not stored here.
+//   ProjectSubcategory -> section headings on project-view.html (admin-managed)
+//   Project            -> cards on project-view.html + detail on project-nested.html
+//   ProjectImage       -> gallery slides on project-nested.html
+// ---------------------------------------------------------------------------
+model ProjectSubcategory {
+  id           Int       @id @default(autoincrement())
+  categorySlug String // "commercial-concrete" | "residential-concrete"
+  name         String // e.g. "Batch Plants"
+  slug         String    @unique // e.g. "batch-plants"
+  sortOrder    Int       @default(0)
+  isActive     Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  projects     Project[]
+
+  @@index([categorySlug])
+}
+
+model Project {
+  id            Int                @id @default(autoincrement())
+  subcategoryId Int
+  subcategory   ProjectSubcategory @relation(fields: [subcategoryId], references: [id], onDelete: Cascade)
+  title         String // e.g. "Ocala Plant (Batch Plant)"
+  description   String?            @db.Text // project-nested description paragraph
+  tag           String? // e.g. "Architecture" (shown as "Architecture / 2025")
+  year          String? // e.g. "2025"
+  jobName       String? // project-nested meta "Job Name"
+  location      String? // project-nested meta "Location"
+  projectSize   String? // project-nested meta "Project Size"
+  thumbnail     String? // /uploads/... card image on project-view.html
+  sortOrder     Int                @default(0)
+  isActive      Boolean            @default(true)
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  images        ProjectImage[]
+
+  @@index([subcategoryId])
+}
+
+model ProjectImage {
+  id        Int      @id @default(autoincrement())
+  projectId Int
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  url       String // /uploads/...
+  alt       String?
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@index([projectId])
+}
+
+// ---------------------------------------------------------------------------
+// Careers: Job -> careers.html (list + filters) + career-view.html (detail)
+// ---------------------------------------------------------------------------
+model Job {
+  id               Int      @id @default(autoincrement())
+  title            String // e.g. "Production Laborer"
+  category         String // engineering | labor | drive | operation | marketing
+  location         String? // e.g. "Ocala"
+  employmentType   String? // e.g. "Full-time"
+  shortDescription String   @db.Text // careers.html card text
+  fullDescription  String?  @db.Text // career-view.html body (HTML/markdown-ish)
+  isActive         Boolean  @default(true)
+  sortOrder        Int      @default(0)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Contact form submissions (stored from contact-us.html, shown in admin)
+// ---------------------------------------------------------------------------
+model ContactSubmission {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  phone     String
+  email     String
+  service   String? // residential | commercial | precast | other
+  message   String?  @db.Text
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Locations: contact-us.html info boxes + embedded map
+// ---------------------------------------------------------------------------
+model Location {
+  id          Int      @id @default(autoincrement())
+  city        String // e.g. "Ocala"
+  badge       String? // e.g. "Headquarters" / "New Location"
+  badgeType   String? // "hq" | "new" -> controls badge styling class
+  address     String
+  hours       String? // e.g. "Mon–Fri 7am–5pm · Sat 7am–12pm"
+  serviceArea String? // e.g. "Serving Marion County & surroundings"
+  phone       String? // display phone e.g. "(352) 640-2903"
+  mapEmbedUrl String   @db.Text // Google Maps embed iframe src
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Delivery / Ready-Mix quote requests (delivery-quote.html mega form)
+// ---------------------------------------------------------------------------
+model DeliveryQuote {
+  id                  Int      @id @default(autoincrement())
+  // Step 1 — delivery location
+  addressLine1        String
+  city                String?
+  state               String?
+  zipCode             String?
+  // Step 1 — date/time
+  deliveryDate        String?
+  deliveryTime        String?
+  // Step 1 — ready mix specs
+  mixPsi              String?
+  needFiber           String?
+  readyMixQty         String?
+  needReinforcing     String?
+  // Selected reinforcing & supplies (label -> value), captured when the user
+  // chooses "Yes Show me what you got".
+  reinforcing         Json?
+  // Step 2 — contact info
+  firstName           String
+  lastName            String?
+  email               String
+  phoneNumber         String
+  businessName        String?
+  poNumber            String?
+  specialInstructions String?  @db.Text
+  isRead              Boolean  @default(false)
+  createdAt           DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Reinforcing & Supplies catalog (shown on delivery-quote.html, admin-managed)
+//   Each product has a heterogeneous set of input fields.
+// ---------------------------------------------------------------------------
+model SupplyProduct {
+  id        Int                  @id @default(autoincrement())
+  title     String
+  image     String? // /uploads/...
+  sortOrder Int                  @default(0)
+  isActive  Boolean              @default(true)
+  createdAt DateTime             @default(now())
+  updatedAt DateTime             @updatedAt
+  fields    SupplyProductField[]
+}
+
+model SupplyProductField {
+  id          Int           @id @default(autoincrement())
+  productId   Int
+  product     SupplyProduct @relation(fields: [productId], references: [id], onDelete: Cascade)
+  label       String // field label, e.g. "Select Rebar Size"
+  inputType   String        @default("number") // "select" | "number"
+  placeholder String?
+  helper      String? // small helper text under the field
+  options     Json? // string[] for selects
+  sortOrder   Int           @default(0)
+
+  @@index([productId])
+}
+
+// ---------------------------------------------------------------------------
+// Gallery photos (gallery.html grid, admin-managed + sortable).
+//   sortOrder controls placement in the fixed grid layout.
+// ---------------------------------------------------------------------------
+model GalleryImage {
+  id        Int      @id @default(autoincrement())
+  url       String
+  alt       String?
+  sortOrder Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+// ---------------------------------------------------------------------------
+// Blog posts (blogs.html grid + blog-view.html detail, admin-managed)
+// ---------------------------------------------------------------------------
+model Blog {
+  id          Int      @id @default(autoincrement())
+  title       String
+  slug        String   @unique
+  coverImage  String? // /uploads/...
+  date        String? // display date e.g. "11 May, 2026"
+  excerpt     String?  @db.Text
+  content     String?  @db.Text // body (paragraphs separated by blank lines, or HTML)
+  author      String?
+  isPublished Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

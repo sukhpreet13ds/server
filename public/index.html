@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del Zotto Concrete | Premium Concrete Solutions</title>
+    <!-- FontAwesome v6 for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preload" href="assets/hero-bg.mp4" as="video" type="video/mp4">
+</head>
+
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete Logo" class="logo-img">
+            </a>
+
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item active">Home</a></li>
+                    <li><a href="about-us.html" class="nav-item">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Services <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                            <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-item">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                    <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="contact-phone">
+                    <div class="phone-icon-container">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                    </div>
+                    <div class="phone-text">
+                        <span class="phone-label">Call Us Phone</span>
+                        <a href="tel:+13526402903" class="phone-number">+1 (352) 640-2903</a>
+                    </div>
+                </div>
+
+                <a href="delivery-quote.html" class="btn-order">ORDER NOW</a>
+
+                <button class="circle-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="circle-btn apps-btn" aria-label="Apps">
+                    <i class="fa-solid fa-grip-lines"></i>
+                </button>
+
+                <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="floating-nav-bar" id="floatingNavBar">
+        <div class="floating-nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item active">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Services<i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel (Slide down full screen) -->
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <!-- Top bar of menu panel: Phone info left, search + close right -->
+        <div class="panel-top-bar">
+            <div class="panel-contact-phone">
+                <div class="panel-phone-icon-container">
+                    <i class="fa-solid fa-phone-volume panel-phone-icon"></i>
+                </div>
+                <div class="panel-phone-text">
+                    <span class="panel-phone-label">Call Us Phone</span>
+                    <a href="tel:+13526402903" class="panel-phone-number">+1 (352) 640-2903</a>
+                </div>
+            </div>
+            <div class="panel-actions-right">
+                <button class="panel-circle-btn panel-search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="panel-close-btn" id="panelCloseBtn" aria-label="Close Navigation Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <nav class="panel-nav">
+            <ul class="panel-nav-links">
+                <li><a href="index.html" class="panel-nav-item">Home</a></li>
+                <li><a href="about-us.html" class="panel-nav-item">About</a></li>
+                <li class="panel-dropdown">
+                    <div class="panel-dropdown-toggle">
+                        <span class="panel-nav-item">Services</span>
+                        <i class="fa-solid fa-chevron-down panel-arrow"></i>
+                    </div>
+                    <ul class="panel-dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="panel-nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="panel-nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="panel-nav-item">Contact</a></li>
+            </ul>
+            <div class="panel-bottom-bar">
+                <a href="delivery-quote.html" class="panel-btn-order">ORDER NOW</a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="apps-side-panel" id="appsSidePanel">
+        <div class="apps-panel-backdrop" id="appsPanelBackdrop"></div>
+
+        <div class="apps-panel-drawer">
+            <button class="apps-panel-close" id="appsPanelClose" aria-label="Close panel">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="apps-panel-search-wrap">
+                <i class="fa-solid fa-magnifying-glass apps-panel-search-icon"></i>
+                <input type="text" class="apps-panel-search-input" placeholder="Search anything…" aria-label="Search">
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-address">
+                <div class="apps-panel-address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Ocala</span>
+                        <p class="apps-panel-address-line">3260 NW Gainesville Rd <br>Ocala, FL 34472</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Crystal River</span>
+                        <p class="apps-panel-address-line">8778 S Jump Ct,<br>Homosassa, FL 34448</p>
+                        <small class="side-panel-contact"><a href="tel:+13526213900">+1 (352) 621-3900</a></small>
+                        <a href="https://www.google.com/maps/place/8778+S+Jump+Ct,+Homosassa,+FL+34448,+USA/@28.8146522,-82.5820457,17z/data=!3m1!4b1!4m6!3m5!1s0x88e83fc114cb7f91:0x221a6147a3aee497!8m2!3d28.8146475!4d-82.5794708!16s%2Fg%2F11c60v4ptp?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Dunnellon</span>
+                        <p class="apps-panel-address-line">
+                            3260 NW Gainesville <br>Rd Ocala, FL 34475</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-socials-section">
+                <span class="apps-panel-socials-label">Follow Us</span>
+                <div class="apps-panel-socials">
+                    <a href="#" class="apps-social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="X/Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-bg.jpg">
+                <source src="assets/hero-bg2.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <div class="hero-content-left">
+                    <span class="hero-badge"><span class="tag-dot"></span>FAMILY OWNED SINCE 1970</span>
+                    <h1 class="hero-title">
+                        Central Florida's
+                        Trusted Ready Mix
+                        Concrete
+                    </h1>
+                    <p class="hero-description">
+                        Three generations of quality, reliability, and innovation. From residential foundations to
+                        commercial high-rises, we deliver the concrete that builds Florida.
+                    </p>
+                    <div class="hero-actions-row">
+                        <a href="delivery-quote.html" class="btn-hero-primary">
+                            <span>ORDER READY MIX</span>
+                            <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                    style="--fa-rotate-angle: -45deg;"></i></div>
+                        </a>
+                        <a href="residential-concrete.html#calculator-vol" class="btn-hero-secondary">
+                            <span>ESTIMATE VOLUME</span>
+                            <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                    style="--fa-rotate-angle: -45deg;"></i></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-content-right">
+                    <div class="hero-box-stat">
+                        <div class="stat-number-wrapper">
+                            <span class="stat-number" id="countNumber">1</span><span class="stat-plus">+</span>
+                        </div>
+                        <p class="stat-subtext">YEARS DELIVERING CONCRETE EXCELLENCE</p>
+                        <div class="stat-footer">
+                            <span>Established 1970</span>
+                            <span>• Central Florida</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-box-image">
+                        <img src="assets/hero-right-mini.png" alt="Del Zotto Concrete Delivery"
+                            class="hero-mini-img active" id="miniImg1">
+                        <img src="assets/hero-right-mini-2.png" alt="Del Zotto Concrete Mixing" class="hero-mini-img"
+                            id="miniImg2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="who-we-are-section">
+            <div class="wwa-bg"></div>
+
+            <div class="wwa-container">
+
+                <div class="wwa-content">
+
+                    <span class="wwa-badge">
+                        <span class="tag-dot"></span>
+                        WHO WE ARE
+                    </span>
+
+                    <div class="wwa-text">
+                        <h2 class="wwa-title">
+                            Built On Integrity. Backed
+                            By Half A Century.
+                        </h2>
+
+                        <p class="wwa-description">
+                            The Del Zotto name has been synonymous with quality concrete across
+                            Central Florida for over 50 years. What started as a family commitment
+                            to craftsmanship has grown into a multi-location operation trusted by
+                            the region's best contractors, developers, and homeowners.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="wwa-images-wrapper">
+                    <a href="commercial-concrete.html" style="text-decoration: none;">
+                        <div class="wwa-img-card">
+                            <img src="assets/who-we-1.png" alt="Contractors and Developers concrete work at night"
+                                class="wwa-img">
+                            <div class="wwa-img-overlay">
+                                <div class="wwa-img-body">
+                                    <h3 class="wwa-card-title">Contractors &amp; Developers</h3>
+                                    <p class="wwa-card-desc">Bulk orders, fleet dispatch, and dedicated account support
+                                        for
+                                        commercial and large residential projects of any scale.</p>
+                                    <a href="commercial-concrete.html" class="wwa-card-btn">EXPLORE</a>
+                                </div>
+                                <span class="wwa-card-tag">For Professionals</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="residential-concrete.html" style="text-decoration: none;">
+                        <div class="wwa-img-card">
+                            <img src="assets/who-we-2.png" alt="DIY and home concrete project" class="wwa-img">
+                            <div class="wwa-img-overlay">
+                                <div class="wwa-img-body">
+                                    <h3 class="wwa-card-title">DIY &amp; Home Projects</h3>
+                                    <p class="wwa-card-desc">Driveways, patios, footings, slabs — order exactly what you
+                                        need with expert guidance. No waste, no guesswork, great service.</p>
+                                    <a href="residential-concrete.html" class="wwa-card-btn">EXPLORE</a>
+                                </div>
+                                <span class="wwa-card-tag">For Homeowners</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="del-location-section">
+            <div class="location-container">
+                <!-- Location Header -->
+                <div class="location-header">
+                    <div class="location-header-left">
+                        <span class="location-badge"><span class="tag-dot"></span>3 PLANT LOCATIONS</span>
+                        <h2 class="location-title">Closer to Your Site</h2>
+                    </div>
+                    <div class="location-header-right">
+                        <p class="location-header-desc">
+                            Bulk orders, fleet dispatch, and dedicated account support for commercial and large
+                            residential projects of any scale.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Location Cards Grid -->
+                <div class="location-cards-grid">
+                    <!-- Card 1: Ocala -->
+                    <div class="location-card">
+                        <div class="location-card-content">
+                            <h3 class="location-card-title">Ocala</h3>
+                            <span class="location-card-badge headquarters">Headquarters</span>
+                            <div class="location-card-divider"></div>
+                            <ul class="location-card-info">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>3260 NW Gainesville Rd Ocala, FL 34475</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>Mon-Fri 7am-5pm · Sat 7am-12pm</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Serving Marion County & surroundings</span>
+                                </li>
+                            </ul>
+                            <div class="location-card-phone">
+                                <a href="tel:+13526402903">(352) 640-2903</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Crystal River -->
+                    <div class="location-card">
+                        <div class="location-card-content">
+                            <h3 class="location-card-title">Crystal River</h3>
+                            <span class="location-card-badge new-location">New Location</span>
+                            <div class="location-card-divider"></div>
+                            <ul class="location-card-info">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>8778 S Jump Ct, Homosassa, FL 34448</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>Mon-Fri 7am-5pm · Sat 7am-12pm</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Serving Marion County & surroundings</span>
+                                </li>
+                            </ul>
+                            <div class="location-card-phone">
+                                <a href="tel:+13526213900">(352) 621-3900</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Dunnellon -->
+                    <div class="location-card">
+                        <div class="location-card-content">
+                            <h3 class="location-card-title">Dunnellon</h3>
+                            <span class="location-card-badge new-location">New Location</span>
+                            <div class="location-card-divider"></div>
+                            <ul class="location-card-info">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>3260 NW Gainesville Rd Ocala, FL 34475</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span>Mon-Fri 7am-5pm · Sat 7am-12pm</span>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <span>Serving Marion County & surroundings</span>
+                                </li>
+                            </ul>
+                            <div class="location-card-phone">
+                                <a href="tel:+13526402903">(352) 640-2903</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower Section Banner (Call dispatch) -->
+                <div class="location-banner">
+                    <div class="location-banner-text">
+                        <h3 class="location-banner-title">Not sure which location serves you?</h3>
+                        <p class="location-banner-desc">One call routes you to the nearest plant – always a real
+                            dispatcher, never a phone menu.</p>
+                    </div>
+                    <div class="location-banner-action">
+                        <a href="contact-us.html" class="btn-location-call">
+                            <span>CALL ANY LOCATION NOW</span>
+                            <span class="call-icon-wrap"><i class="fa-solid fa-phone"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- YouTube Video Section -->
+                <div class="location-video-container">
+                    <div class="location-video-wrapper" id="locationVideoWrapper">
+                        <div class="location-video-poster" style="background-image: url('assets/gallery-16.jpg');">
+
+                            <div class="location-video-overlay"></div>
+
+                            <button class="location-play-btn" id="locationPlayBtn" aria-label="Play video">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="del-projects-slides">
+            <div class="projects-container">
+                <!-- Section Header -->
+                <div class="projects-header">
+                    <div class="projects-header-left">
+                        <span class="projects-badge"><span class="tag-dot"></span>OUR PROJECTS</span>
+                        <h2 class="projects-title">Excellence you can trust,<br>results you can see</h2>
+                    </div>
+                    <div class="projects-header-right">
+                        <a href="projects.html" class="btn-projects-view">VIEW ALL PROJECTS</a>
+                    </div>
+                </div>
+
+                <!-- Slider Wrapper -->
+                <div class="projects-slider-wrapper" id="projectsSliderWrapper">
+                    <div class="projects-slider-track">
+                        <!-- Slide 1 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/slide1.png" alt="Ocala Plant Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Architecture / 2025</span>
+                                <h3 class="project-slide-title">Blending futuristic building</h3>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/del-slide2.jpg" alt="Homosassa Plant Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Commercial / 2025</span>
+                                <h3 class="project-slide-title">Modern concrete foundation</h3>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/del-slide3.jpg" alt="Crystal River Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Industrial / 2026</span>
+                                <h3 class="project-slide-title">Heavy machinery base</h3>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/del-slide4.jpg" alt="Dunnellon Plant Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Residential / 2025</span>
+                                <h3 class="project-slide-title">High-durability driveway slab</h3>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/del-slide5.jpg" alt="Ocala Commercial Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Infrastructure / 2026</span>
+                                <h3 class="project-slide-title">Reinforced drainage channel</h3>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6 -->
+                        <div class="project-slide">
+                            <div class="project-slide-img-wrap">
+                                <img src="assets/del-slide-6.jpg" alt="Community Concrete Project">
+                                <a href="project-view.html" class="project-slide-hover-btn" aria-label="View Project">
+                                    <i class="fa-solid fa-arrow-right fa-rotate-by"
+                                        style="--fa-rotate-angle: -45deg;"></i>
+                                </a>
+                            </div>
+                            <div class="project-slide-info">
+                                <span class="project-slide-tag">Public Work / 2025</span>
+                                <h3 class="project-slide-title">Urban pedestrian walkway</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-slider-controls">
+                    <button class="projects-control-btn prev" id="projectsPrevBtn" aria-label="Previous slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="projects-range-track" id="projectsRangeTrack">
+                        <div class="projects-range-fill" id="projectsRangeFill"></div>
+                    </div>
+                    <button class="projects-control-btn next" id="projectsNextBtn" aria-label="Next slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="del-gallery-section">
+            <div class="del-gallery-section-quote">
+
+                <div class="del-gallery-section-quote-line">
+                    <i class="fa-solid fa-quote-right"></i>
+                    "Del Zotto has been our go-to supplier for five years. Shows up on time, mix is always consistent,
+                    and when I call I get a real dispatcher — never a phone tree."
+                </div>
+                <span class="del-gallery-section-writter">Mike Reynolds</span>
+            </div>
+            <div class="gallery-bg-title">DelZotto</div>
+            <div class="gallery-rows-container">
+                <!-- Row 1 (upper row, scroll left) -->
+                <div class="gallery-row scroll-left">
+                    <div class="gallery-track">
+                        <div class="gallery-item size-sm"><img src="assets/gallery-1.jpg" alt="Gallery 1"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-2.jpg" alt="Gallery 2"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-3.jpg" alt="Gallery 3"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-4.jpg" alt="Gallery 4"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-5.jpg" alt="Gallery 5"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-6.jpg" alt="Gallery 6"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-7.jpg" alt="Gallery 7"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-8.jpg" alt="Gallery 8"></div>
+                        <!-- Duplicate -->
+                        <div class="gallery-item size-sm"><img src="assets/gallery-1.jpg" alt="Gallery 1"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-2.jpg" alt="Gallery 2"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-3.jpg" alt="Gallery 3"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-4.jpg" alt="Gallery 4"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-5.jpg" alt="Gallery 5"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-6.jpg" alt="Gallery 6"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-7.jpg" alt="Gallery 7"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-8.jpg" alt="Gallery 8"></div>
+                    </div>
+                </div>
+                <!-- Row 2 (lower row, scroll right) -->
+                <div class="gallery-row scroll-right">
+                    <div class="gallery-track">
+                        <div class="gallery-item size-md"><img src="assets/gallery-9.jpg" alt="Gallery 9"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-10.jpg" alt="Gallery 10"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-11.jpg" alt="Gallery 11"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-12.jpg" alt="Gallery 12"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-13.jpg" alt="Gallery 13"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-14.jpg" alt="Gallery 14"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-15.jpg" alt="Gallery 15"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-16.jpg" alt="Gallery 16"></div>
+                        <!-- Duplicate -->
+                        <div class="gallery-item size-md"><img src="assets/gallery-9.jpg" alt="Gallery 9"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-10.jpg" alt="Gallery 10"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-11.jpg" alt="Gallery 11"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-12.jpg" alt="Gallery 12"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-13.jpg" alt="Gallery 13"></div>
+                        <div class="gallery-item size-sm"><img src="assets/gallery-14.jpg" alt="Gallery 14"></div>
+                        <div class="gallery-item size-md"><img src="assets/gallery-15.jpg" alt="Gallery 15"></div>
+                        <div class="gallery-item size-lg"><img src="assets/gallery-16.jpg" alt="Gallery 16"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="del-articles-section">
+            <div class="articles-container">
+                <div class="articles-header">
+                    <span class="articles-badge"><span class="tag-dot"></span>FROM THE FIELD</span>
+                    <h2 class="articles-title">Articles &amp; News</h2>
+                </div>
+
+                <div class="articles-grid">
+                    <!-- Card 1 -->
+                    <article class="article-card">
+                        <div class="article-card-img">
+                            <img src="assets/del-slide4.jpg" alt="Masonry Apprenticeships in Florida">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-date">11 May, 2026</span>
+                            <h3 class="article-card-title">Masonry Apprenticeships in Florida</h3>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="article-card">
+                        <div class="article-card-img">
+                            <img src="assets/gallery-5.jpg" alt="Masonry Apprenticeships in Florida">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-date">18 May, 2026</span>
+                            <h3 class="article-card-title">Choosing the Right Concrete Mix for Your Project</h3>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="article-card">
+                        <div class="article-card-img">
+                            <img src="assets/gallery-3.jpg" alt="Masonry Apprenticeships in Florida">
+                        </div>
+                        <div class="article-card-body">
+                            <span class="article-date">25 May, 2026</span>
+                            <h3 class="article-card-title">Precast Solutions for Modern Builds</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="articles-cta">
+                    <a href="blogs.html" class="btn-articles-view">VIEW ALL</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Weather Section -->
+        <section class="del-weather-section">
+            <div class="weather-container">
+                <div class="weather-header">
+                    <span class="weather-badge">
+                        <span class="tag-dot"></span>
+                        Live Conditions
+                    </span>
+                    <h2 class="weather-title">Ocala Weather</h2>
+                </div>
+                <div class="weather-grid">
+                    <!-- Current Conditions Card -->
+                    <div class="weather-current-card" id="weatherCurrentCard">
+                        <div class="weather-current-main">
+                            <span class="weather-temp-large" id="currentTemp">--°F</span>
+                            <div class="weather-current-icon-wrap" id="currentIcon">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                        <div class="weather-current-desc" id="currentDesc">Loading conditions...</div>
+                        <div class="weather-details-grid">
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Humidity</span>
+                                <span class="weather-detail-value" id="currentHumidity">--%</span>
+                            </div>
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Wind Speed</span>
+                                <span class="weather-detail-value" id="currentWind">-- mph</span>
+                            </div>
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Cloud Cover</span>
+                                <span class="weather-detail-value" id="currentClouds">--%</span>
+                            </div>
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Coordinates</span>
+                                <span class="weather-detail-value" id="weatherCoords" style="font-size: 13px;">--</span>
+                            </div>
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Elevation</span>
+                                <span class="weather-detail-value" id="weatherElevation">--</span>
+                            </div>
+                            <div class="weather-detail-item">
+                                <span class="weather-detail-label">Timezone</span>
+                                <span class="weather-detail-value" id="weatherTimezone">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7-Day Forecast Grid -->
+                    <div class="weather-forecast-grid" id="forecastGrid">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="del-footer">
+        <!-- Background image + dark overlay -->
+        <div class="footer-bg">
+            <img src="assets/slide1.png" alt="" class="footer-bg-img">
+            <div class="footer-bg-overlay"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Col 1: Logo + Social -->
+                <div class="footer-col footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete" class="footer-logo">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="X/Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Order Ready Mix</a></li>
+                        <li><a href="#">Get a Quote</a></li>
+                        <li><a href="residential-concrete.html#calculator-vol">Volume Calculator</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blogs.html">News & Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Commercial Pours</a></li>
+                        <li><a href="#">Residential Orders</a></li>
+                        <li><a href="#">Rebar &amp; Supplies</a></li>
+                        <li><a href="#">Custom PSI Mixes</a></li>
+                        <li><a href="#">Same-Day Dispatch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Locations -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Locations</h4>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Ocala</strong>
+                        <p>3260 NW Gainesville Rd<br>Ocala, FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Crystal River</strong>
+                        <p>8778 S Jump Ct, Homosassa,<br>FL 34448</p>
+                        <a href="tel:+13526213900" class="footer-phone">(352) 621-3900</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Dunnellon</strong>
+                        <p>
+                            3260 NW Gainesville Rd Ocala,<br> FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Badge Row -->
+        <div class="footer-badges-row">
+            <div class="footer-container">
+                <div class="footer-badges">
+                    <img src="assets/footer-1.png" alt="CMEC Certification" class="footer-badge-img">
+                    <img src="assets/footer-2.png" alt="Precision Standards International" class="footer-badge-img">
+                    <img src="assets/footer-3.png" alt="ACI Certification" class="footer-badge-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-container">
+                <p class="footer-copyright">Copyright &copy; 2026 Del Zotto Concrete. All Rights Reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js" defer></script>
+    <script src="script/dynamic.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const apiEndpoint = 'https://api.open-meteo.com/v1/forecast?latitude=29.1872&longitude=-82.1401&current=temperature_2m,relative_humidity_2m,cloud_cover,wind_speed_10m,weather_code&hourly=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America/New_York&forecast_days=7';
+
+            const weatherCodes = {
+                0: { label: 'Clear Sky', icon: 'fa-sun' },
+                1: { label: 'Mainly Clear', icon: 'fa-cloud-sun' },
+                2: { label: 'Partly Cloudy', icon: 'fa-cloud' },
+                3: { label: 'Overcast', icon: 'fa-cloud' },
+                45: { label: 'Foggy', icon: 'fa-smog' },
+                48: { label: 'Depositing Rime Fog', icon: 'fa-smog' },
+                51: { label: 'Light Drizzle', icon: 'fa-cloud-rain' },
+                53: { label: 'Moderate Drizzle', icon: 'fa-cloud-rain' },
+                55: { label: 'Dense Drizzle', icon: 'fa-cloud-rain' },
+                56: { label: 'Light Freezing Drizzle', icon: 'fa-snowflake' },
+                57: { label: 'Dense Freezing Drizzle', icon: 'fa-snowflake' },
+                61: { label: 'Slight Rain', icon: 'fa-cloud-showers-heavy' },
+                63: { label: 'Moderate Rain', icon: 'fa-cloud-showers-heavy' },
+                65: { label: 'Heavy Rain', icon: 'fa-cloud-showers-heavy' },
+                66: { label: 'Light Freezing Rain', icon: 'fa-snowflake' },
+                67: { label: 'Heavy Freezing Rain', icon: 'fa-snowflake' },
+                71: { label: 'Slight Snow', icon: 'fa-snowflake' },
+                73: { label: 'Moderate Snow', icon: 'fa-snowflake' },
+                75: { label: 'Heavy Snow', icon: 'fa-snowflake' },
+                77: { label: 'Snow Grains', icon: 'fa-snowflake' },
+                80: { label: 'Slight Rain Showers', icon: 'fa-cloud-showers-water' },
+                81: { label: 'Moderate Rain Showers', icon: 'fa-cloud-showers-water' },
+                82: { label: 'Violent Rain Showers', icon: 'fa-cloud-showers-water' },
+                85: { label: 'Slight Snow Showers', icon: 'fa-snowflake' },
+                86: { label: 'Heavy Snow Showers', icon: 'fa-snowflake' },
+                95: { label: 'Thunderstorm', icon: 'fa-cloud-bolt' },
+                96: { label: 'Thunderstorm with Hail', icon: 'fa-cloud-bolt' },
+                99: { label: 'Severe Thunderstorm', icon: 'fa-cloud-bolt' }
+            };
+
+            function getWeatherInfo(code) {
+                return weatherCodes[code] || { label: 'Unspecified', icon: 'fa-cloud-sun' };
+            }
+
+            function getDayName(dateString) {
+                const date = new Date(dateString + 'T00:00:00');
+                return date.toLocaleDateString('en-US', { weekday: 'short' });
+            }
+
+            function getThemeClass(code) {
+                if ([0, 1].includes(code)) return 'weather-card-clear';
+                if ([2, 3, 45, 48].includes(code)) return 'weather-card-cloudy';
+                if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return 'weather-card-rainy';
+                if ([71, 73, 75, 77, 85, 86].includes(code)) return 'weather-card-snowy';
+                if ([95, 96, 99].includes(code)) return 'weather-card-stormy';
+                return 'weather-card-cloudy';
+            }
+
+            fetch(apiEndpoint)
+                .then(res => {
+                    if (!res.ok) throw new Error('Weather service unavailable');
+                    return res.json();
+                })
+                .then(data => {
+                    const current = data.current;
+                    const daily = data.daily;
+
+                    // Populate current conditions
+                    const currentInfo = getWeatherInfo(current.weather_code);
+                    document.getElementById('currentTemp').textContent = `${Math.round(current.temperature_2m)}°F`;
+                    document.getElementById('currentIcon').innerHTML = `<i class="fa-solid ${currentInfo.icon}"></i>`;
+                    document.getElementById('currentDesc').textContent = currentInfo.label;
+                    document.getElementById('currentHumidity').textContent = `${current.relative_humidity_2m}%`;
+                    document.getElementById('currentWind').textContent = `${Math.round(current.wind_speed_10m)} mph`;
+                    document.getElementById('currentClouds').textContent = `${current.cloud_cover}%`;
+
+                    // Extra metadata
+                    document.getElementById('weatherCoords').textContent = `${data.latitude.toFixed(4)}°N, ${Math.abs(data.longitude).toFixed(4)}°W`;
+                    document.getElementById('weatherElevation').textContent = `${data.elevation}m (${Math.round(data.elevation * 3.28084)} ft)`;
+                    document.getElementById('weatherTimezone').textContent = `${data.timezone_abbreviation || 'GMT-4'}`;
+
+                    // Populate 7-day forecast
+                    const forecastGrid = document.getElementById('forecastGrid');
+                    forecastGrid.innerHTML = ''; // Clear existing contents
+
+                    for (let i = 0; i < daily.time.length; i++) {
+                        const dayName = i === 0 ? 'Today' : getDayName(daily.time[i]);
+                        const dayInfo = getWeatherInfo(daily.weather_code[i]);
+                        const maxTemp = Math.round(daily.temperature_2m_max[i]);
+                        const minTemp = Math.round(daily.temperature_2m_min[i]);
+                        const themeClass = getThemeClass(daily.weather_code[i]);
+
+                        const forecastCard = document.createElement('div');
+                        forecastCard.className = `weather-forecast-card ${themeClass}`;
+                        forecastCard.innerHTML = `
+                            <span class="forecast-day">${dayName}</span>
+                            <div class="forecast-icon">
+                                <i class="fa-solid ${dayInfo.icon}"></i>
+                            </div>
+                            <div class="forecast-desc">${dayInfo.label}</div>
+                            <div class="forecast-temps">
+                                <span class="forecast-temp-max">${maxTemp}°</span>
+                                <span class="forecast-temp-min">${minTemp}°</span>
+                            </div>
+                        `;
+                        forecastGrid.appendChild(forecastCard);
+                    }
+                })
+                .catch(err => {
+                    console.error('Error fetching weather:', err);
+                    document.getElementById('currentDesc').textContent = 'Failed to load weather data';
+                    document.getElementById('currentIcon').innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+                });
+        });
+    </script>
+</body>
+
+</html>

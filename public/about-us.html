@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Del Zotto Concrete</title>
+    <!-- FontAwesome v6 for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preload" href="assets/hero-bg.mp4" as="video" type="video/mp4">
+</head>
+
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete Logo" class="logo-img">
+            </a>
+
+            <!-- Center: Nav Items -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about-us.html" class="nav-item active">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Services <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                            <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-item">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                    <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right: Contact info, Order, Search, Apps grid -->
+            <div class="header-actions">
+                <div class="contact-phone">
+                    <div class="phone-icon-container">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                    </div>
+                    <div class="phone-text">
+                        <span class="phone-label">Call Us Phone</span>
+                        <a href="tel:+13526402903" class="phone-number">+1 (352) 640-2903</a>
+                    </div>
+                </div>
+
+                <a href="delivery-quote.html" class="btn-order">ORDER NOW</a>
+
+                <button class="circle-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="circle-btn apps-btn" aria-label="Apps">
+                    <i class="fa-solid fa-grip-lines"></i>
+                </button>
+
+                <!-- Burger menu for mobile/tablet (right side) -->
+                <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="floating-nav-bar" id="floatingNavBar">
+        <div class="floating-nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item active">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Services<i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <!-- Top bar of menu panel: Phone info left, search + close right -->
+        <div class="panel-top-bar">
+            <div class="panel-contact-phone">
+                <div class="panel-phone-icon-container">
+                    <i class="fa-solid fa-phone-volume panel-phone-icon"></i>
+                </div>
+                <div class="panel-phone-text">
+                    <span class="panel-phone-label">Call Us Phone</span>
+                    <a href="tel:+13526402903" class="panel-phone-number">+1 (352) 640-2903</a>
+                </div>
+            </div>
+            <div class="panel-actions-right">
+                <button class="panel-circle-btn panel-search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="panel-close-btn" id="panelCloseBtn" aria-label="Close Navigation Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <nav class="panel-nav">
+            <ul class="panel-nav-links">
+                <li><a href="index.html" class="panel-nav-item">Home</a></li>
+                <li><a href="about-us.html" class="panel-nav-item active">About</a></li>
+                <li class="panel-dropdown">
+                    <div class="panel-dropdown-toggle">
+                        <span class="panel-nav-item">Services</span>
+                        <i class="fa-solid fa-chevron-down panel-arrow"></i>
+                    </div>
+                    <ul class="panel-dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="panel-nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="panel-nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="panel-nav-item">Contact</a></li>
+            </ul>
+            <!-- Bottom: Order Now Button -->
+            <div class="panel-bottom-bar">
+                <a href="delivery-quote.html" class="panel-btn-order">ORDER NOW</a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="apps-side-panel" id="appsSidePanel">
+        <div class="apps-panel-backdrop" id="appsPanelBackdrop"></div>
+
+        <div class="apps-panel-drawer">
+            <button class="apps-panel-close" id="appsPanelClose" aria-label="Close panel">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="apps-panel-search-wrap">
+                <i class="fa-solid fa-magnifying-glass apps-panel-search-icon"></i>
+                <input type="text" class="apps-panel-search-input" placeholder="Search anything…" aria-label="Search">
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-address">
+                <div class="apps-panel-address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Ocala</span>
+                        <p class="apps-panel-address-line">3260 NW Gainesville Rd <br>Ocala, FL 34472</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Crystal River</span>
+                        <p class="apps-panel-address-line">8778 S Jump Ct,<br>Homosassa, FL 34448</p>
+                        <small class="side-panel-contact"><a href="tel:+13526213900">+1 (352) 621-3900</a></small>
+                        <a href="https://www.google.com/maps/place/8778+S+Jump+Ct,+Homosassa,+FL+34448,+USA/@28.8146522,-82.5820457,17z/data=!3m1!4b1!4m6!3m5!1s0x88e83fc114cb7f91:0x221a6147a3aee497!8m2!3d28.8146475!4d-82.5794708!16s%2Fg%2F11c60v4ptp?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Dunnellon</span>
+                        <p class="apps-panel-address-line">
+                            3260 NW Gainesville <br>Rd Ocala, FL 34475</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-socials-section">
+                <span class="apps-panel-socials-label">Follow Us</span>
+                <div class="apps-panel-socials">
+                    <a href="#" class="apps-social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="X/Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main class="main-services">
+        <section class="hero-resi-section">
+            <!-- Dark bg area with title -->
+            <div class="resi-hero-top">
+                <div class="resi-hero-bg">
+                    <img src="assets/slide1.png" alt="commercial slide image" class="resi-hero-bg-img">
+                    <div class="resi-hero-bg-overlay"></div>
+                </div>
+                <div class="resi-hero-title-wrap">
+                    <h1 class="resi-hero-title">About Us</h1>
+                </div>
+            </div>
+
+            <!-- Banner image — sits between dark bg and white content, overlapping both -->
+            <div class="resi-hero-banner-wrap">
+                <img src="assets/about-banner.jpg" alt="Commercial Concrete Work" class="resi-hero-banner-img">
+            </div>
+        </section>
+
+        <section class="about-us-intro">
+            <h2 class="section-title">The Del Zotto Family Legacy</h2>
+            <div class="about-us-container">
+
+                <div class="about-us-intro-left">
+                    <img src="assets/about-us-upper.jpg" alt="William John Bill Del Zotto" class="about-us-intro-img">
+                </div>
+                <div class="about-us-intro-right">
+                    <div class="about-us-intro-content">
+                        <p class="about-us-intro-text highlight">When you think of pre-cast concrete innovation, one
+                            name stands out as a beacon of ingenuity and dedication: William John "Bill" Del Zotto.</p>
+                        <p class="about-us-intro-text">Born in 1901, William Mario Del Zotto was an immigrant from Italy
+                            to the U.S. during the beginning of the European Arena of World War II. He worked as a brick
+                            layer in the coke ovens of US Steel in Duluth, MN. William Mario helped his son William John
+                            Del Zotto, born in '42, get his start in the pre-cast concrete business and continued to
+                            give him advice right up to his death in 1984.</p>
+                        <p class="about-us-intro-text">William John (Bill) Del Zotto founded Del Zotto Manufacturing.
+                            Bill started out just making steps and step forms, then septic tanks and septic tank forms.
+                        </p>
+                        <p class="about-us-intro-text">From those early forms, Bill built smarter and more efficient
+                            concrete forms by making them safer and easier to strip, pour, and maintain. He invented and
+                            patented hundreds of precast forms and equipment.</p>
+                        <p class="about-us-intro-text">In 1987 Bill married Laura Misiewicz who has been the key to the
+                            exponential growth of the companies, leading all of the projects and expansions all while
+                            giving birth and raising six children. Laura is greatly admired by many for her work ethic,
+                            strength and kindness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-us-full-banner">
+            <div class="about-us-banner-bg">
+                <img src="assets/about-us-mid.jpg" alt="Del Zotto mid banner" class="about-us-banner-img">
+                <div class="about-us-banner-overlay"></div>
+            </div>
+            <div class="about-us-banner-content">
+                <h2 class="about-us-banner-text">Bill built smarter and more efficient concrete forms by making them
+                    safer and easier to strip</h2>
+            </div>
+        </section>
+
+        <section class="about-us-lower-intro">
+            <div class="about-us-container">
+                <div class="about-us-intro-left">
+                    <div class="about-us-intro-content">
+                        <p class="about-us-intro-text highlight">Del Zotto has always been renown within the concrete
+                            industry as the source for quality products. We aim to provide a one-stop concrete industry
+                            superstore.</p>
+                        <p class="about-us-intro-text">Son, William Mark (Billy Jr.) Del Zotto, owns Del Zotto Products
+                            of MN and TX. Billy Jr. has accomplished perfecting what was by inventing more and better
+                            forms such as the wet-cast and dry-cast concrete mixing systems.</p>
+                        <p class="about-us-intro-text">Sons & Daughters Phillip, Mary, Mario, Abigail, Elizabeth, and
+                            Mielia Del Zotto, have assumed the administrative roles of the Florida, and Freeport, Grand
+                            Bahama businesses. They have expanded their reach with numerous other businesses in the
+                            category of construction materials, all while working as a team of six equal owners. The Del
+                            Zotto Daughters & Sons have been responsible for designing and perfecting the engineering
+                            and design of the RCP/Pipe machinery, forms and equipment, along with expanding into other
+                            industries, including but not limited to, Furniture, Hardware, Building Materials, Ready-Mix
+                            concrete, Block, as well as others within the United States and The Bahamas.</p>
+                        <p class="about-us-intro-text">Del Zotto has always been renowned within the concrete industry
+                            as the source for quality products. We aim to provide a one-stop concrete industry
+                            superstore.</p>
+                    </div>
+                </div>
+                <div class="about-us-intro-right">
+                    <img src="assets/about-us-lower.jpg" alt="Del Zotto Manufacturing Facility"
+                        class="about-us-intro-img">
+                </div>
+            </div>
+        </section>
+        <section class="resi-cta">
+            <div class="resi-cta-overlay"></div>
+            <div class="resi-cta-container">
+                <h2 class="resi-cta-heading">Ready To Start Your Concrete Project?</h2>
+                <p class="resi-cta-subtext">Get premium ready mix concrete delivered directly to your job site with
+                    reliable scheduling and expert support.</p>
+                <div class="resi-cta-buttons">
+                    <a href="delivery-quote.html" class="btn-resi-cta-primary">
+                        <span>REQUEST A QUOTE</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                    <a href="tel:+13526402903" class="btn-resi-cta-secondary">
+                        <span>CALL OUR TEAM</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="del-footer">
+        <!-- Background image + dark overlay -->
+        <div class="footer-bg">
+            <img src="assets/slide1.png" alt="" class="footer-bg-img">
+            <div class="footer-bg-overlay"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Col 1: Logo + Social -->
+                <div class="footer-col footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete" class="footer-logo">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="X/Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Order Ready Mix</a></li>
+                        <li><a href="#">Get a Quote</a></li>
+                        <li><a href="residential-concrete.html#calculator-vol">Volume Calculator</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blogs.html">News & Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Commercial Pours</a></li>
+                        <li><a href="#">Residential Orders</a></li>
+                        <li><a href="#">Rebar &amp; Supplies</a></li>
+                        <li><a href="#">Custom PSI Mixes</a></li>
+                        <li><a href="#">Same-Day Dispatch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Locations -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Locations</h4>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Ocala</strong>
+                        <p>3260 NW Gainesville Rd<br>Ocala, FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Crystal River</strong>
+                        <p>8778 S Jump Ct, Homosassa,<br>FL 34448</p>
+                        <a href="tel:+13526213900" class="footer-phone">(352) 621-3900</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Dunnellon</strong>
+                        <p>
+                            3260 NW Gainesville Rd Ocala,<br> FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Badge Row -->
+        <div class="footer-badges-row">
+            <div class="footer-container">
+                <div class="footer-badges">
+                    <img src="assets/footer-1.png" alt="CMEC Certification" class="footer-badge-img">
+                    <img src="assets/footer-2.png" alt="Precision Standards International" class="footer-badge-img">
+                    <img src="assets/footer-3.png" alt="ACI Certification" class="footer-badge-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-container">
+                <p class="footer-copyright">Copyright &copy; 2026 Del Zotto Concrete. All Rights Reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js" defer></script>
+</body>
+
+</html>

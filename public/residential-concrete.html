@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY & Home Projects Services | Del Zotto Concrete</title>
+    <!-- FontAwesome v6 for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preload" href="assets/hero-bg.mp4" as="video" type="video/mp4">
+</head>
+
+<body>
+
+    <!-- Primary Header -->
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete Logo" class="logo-img">
+            </a>
+
+            <!-- Center: Nav Items -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about-us.html" class="nav-item">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item active">Services <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="residential-concrete.html" class="drop-item active">Residential Concrete</a>
+                            </li>
+                            <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-item">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                    <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right: Contact info, Order, Search, Apps grid -->
+            <div class="header-actions">
+                <div class="contact-phone">
+                    <div class="phone-icon-container">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                    </div>
+                    <div class="phone-text">
+                        <span class="phone-label">Call Us Phone</span>
+                        <a href="tel:+13526402903" class="phone-number">+1 (352) 640-2903</a>
+                    </div>
+                </div>
+
+                <a href="delivery-quote.html" class="btn-order">ORDER NOW</a>
+
+                <button class="circle-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="circle-btn apps-btn" aria-label="Apps">
+                    <i class="fa-solid fa-grip-lines"></i>
+                </button>
+
+                <!-- Burger menu for mobile/tablet (right side) -->
+                <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="floating-nav-bar" id="floatingNavBar">
+        <div class="floating-nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item active">Services<i
+                            class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="residential-concrete.html" class="drop-item active">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <!-- Top bar of menu panel: Phone info left, search + close right -->
+        <div class="panel-top-bar">
+            <div class="panel-contact-phone">
+                <div class="panel-phone-icon-container">
+                    <i class="fa-solid fa-phone-volume panel-phone-icon"></i>
+                </div>
+                <div class="panel-phone-text">
+                    <span class="panel-phone-label">Call Us Phone</span>
+                    <a href="tel:+13526402903" class="panel-phone-number">+1 (352) 640-2903</a>
+                </div>
+            </div>
+            <div class="panel-actions-right">
+                <button class="panel-circle-btn panel-search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="panel-close-btn" id="panelCloseBtn" aria-label="Close Navigation Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <nav class="panel-nav">
+            <ul class="panel-nav-links">
+                <li><a href="index.html" class="panel-nav-item">Home</a></li>
+                <li><a href="about-us.html" class="panel-nav-item">About</a></li>
+                <li class="panel-dropdown">
+                    <div class="panel-dropdown-toggle">
+                        <span class="panel-nav-item">Services</span>
+                        <i class="fa-solid fa-chevron-down panel-arrow"></i>
+                    </div>
+                    <ul class="panel-dropdown-menu">
+                        <li><a href="residential-concrete.html" class="active">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="panel-nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="panel-nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="panel-nav-item">Contact</a></li>
+            </ul>
+            <!-- Bottom: Order Now Button -->
+            <div class="panel-bottom-bar">
+                <a href="delivery-quote.html" class="panel-btn-order">ORDER NOW</a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="apps-side-panel" id="appsSidePanel">
+        <div class="apps-panel-backdrop" id="appsPanelBackdrop"></div>
+
+        <div class="apps-panel-drawer">
+            <button class="apps-panel-close" id="appsPanelClose" aria-label="Close panel">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="apps-panel-search-wrap">
+                <i class="fa-solid fa-magnifying-glass apps-panel-search-icon"></i>
+                <input type="text" class="apps-panel-search-input" placeholder="Search anything…" aria-label="Search">
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-address">
+                <div class="apps-panel-address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Ocala</span>
+                        <p class="apps-panel-address-line">3260 NW Gainesville Rd <br>Ocala, FL 34472</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Crystal River</span>
+                        <p class="apps-panel-address-line">8778 S Jump Ct,<br>Homosassa, FL 34448</p>
+                        <small class="side-panel-contact"><a href="tel:+13526213900">+1 (352) 621-3900</a></small>
+                        <a href="https://www.google.com/maps/place/8778+S+Jump+Ct,+Homosassa,+FL+34448,+USA/@28.8146522,-82.5820457,17z/data=!3m1!4b1!4m6!3m5!1s0x88e83fc114cb7f91:0x221a6147a3aee497!8m2!3d28.8146475!4d-82.5794708!16s%2Fg%2F11c60v4ptp?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Dunnellon</span>
+                        <p class="apps-panel-address-line">
+                            3260 NW Gainesville <br>Rd Ocala, FL 34475</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-socials-section">
+                <span class="apps-panel-socials-label">Follow Us</span>
+                <div class="apps-panel-socials">
+                    <a href="#" class="apps-social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="X/Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-services">
+        <section class="hero-resi-section">
+            <!-- Dark bg area with title -->
+            <div class="resi-hero-top">
+                <div class="resi-hero-bg">
+                    <img src="assets/slide1.png" alt="" class="resi-hero-bg-img">
+                    <div class="resi-hero-bg-overlay"></div>
+                </div>
+                <div class="resi-hero-title-wrap">
+                    <h1 class="resi-hero-title">DIY & Home <br>Projects</h1>
+                </div>
+            </div>
+
+            <!-- Banner image — sits between dark bg and white content, overlapping both -->
+            <div class="resi-hero-banner-wrap">
+                <img src="assets/commercial-banner.jpg" alt="Residential Concrete Work" class="resi-hero-banner-img">
+            </div>
+
+            <!-- White content block below -->
+            <div class="resi-hero-content">
+                <h2 class="resi-hero-sub-title">DIY & Home Projects Solutions Built to Last</h2>
+                <p class="resi-hero-desc">From driveways and patios to foundations and custom home projects, Del Zotto
+                    delivers premium ready mix concrete designed for durability, precision, and long-term performance.
+                </p>
+                <p class="resi-hero-desc">Whether you're a homeowner, builder, or contractor, our team provides reliable
+                    delivery, expert guidance, and the right mix for every residential project.</p>
+                <a href="delivery-quote.html" class="btn-resi-quote">
+                    <span>REQUEST A RESIDENTIAL QUOTE</span>
+                    <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                            style="--fa-rotate-angle: -45deg;"></i></div>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="resi-built-section">
+            <div class="resi-built-container">
+                <div class="resi-built-left">
+                    <img src="assets/built-left.png" alt="Built for Homeowners & Residential Builders"
+                        class="resi-built-img">
+                </div>
+                <div class="resi-built-right">
+                    <div class="resi-built-content">
+                        <h2 class="resi-built-title">Built for Homeowners & Residential Builders</h2>
+                        <p class="resi-built-desc">We understand that residential concrete projects require more than
+                            just materials – they require accuracy, timing, and dependable service.</p>
+                        <p class="resi-built-desc">Our team works closely with homeowners, custom home builders, and
+                            residential contractors to ensure every pour meets structural and aesthetic expectations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resi-concrete-section">
+            <div class="resi-concrete-container">
+                <h2 class="resi-concrete-heading">DIY & Home Projects Services</h2>
+                <div class="resi-concrete-grid">
+                    <!-- Box 1 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-1.svg" alt="Driveways Icon" class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Driveways</h3>
+                        <p class="resi-concrete-card-desc">Durable, smooth, and professionally engineered concrete
+                            driveways built to handle everyday traffic while enhancing curb appeal.</p>
+                    </div>
+                    <!-- Box 2 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-2.svg" alt="Garage Floors Icon" class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Garage Floors</h3>
+                        <p class="resi-concrete-card-desc">Heavy-duty concrete flooring solutions designed to withstand
+                            vehicles, storage, and daily residential use.</p>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-3.svg" alt="Foundations & Slabs Icon" class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Foundations & Slabs</h3>
+                        <p class="resi-concrete-card-desc">Strong structural foundations for homes, garages, sheds, and
+                            additions with properly engineered concrete mixes.</p>
+                    </div>
+                    <!-- Box 4 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-4.svg" alt="Sidewalks & Walkways Icon" class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Sidewalks & Walkways</h3>
+                        <p class="resi-concrete-card-desc">Safe and long-lasting concrete walkways designed for
+                            residential properties and landscaping projects.</p>
+                    </div>
+                    <!-- Box 5 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-5.svg" alt="Patios & Outdoor Living Spaces Icon"
+                                class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Patios & Outdoor Living Spaces</h3>
+                        <p class="resi-concrete-card-desc">Create beautiful outdoor spaces with high-quality concrete
+                            for patios, pool decks, walkways, and entertainment areas.</p>
+                    </div>
+                    <!-- Box 6 -->
+                    <div class="resi-concrete-card">
+                        <div class="resi-concrete-icon-wrap">
+                            <img src="assets/res-6.svg" alt="Concrete Repairs & Replacements Icon"
+                                class="resi-concrete-icon">
+                        </div>
+                        <h3 class="resi-concrete-card-title">Concrete Repairs & Replacements</h3>
+                        <p class="resi-concrete-card-desc">Remove damaged or aging concrete and replace it with fresh,
+                            high-performance ready mix solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="resi-home-owners">
+            <div class="resi-home-owners-overlay"></div>
+            <div class="resi-home-owners-container">
+                <h2 class="resi-home-owners-heading">Why Homeowners Choose Del Zotto</h2>
+                <div class="resi-home-owners-grid">
+                    <!-- Card 1 -->
+                    <div class="resi-home-owners-card">
+                        <h3 class="resi-home-owners-card-title">Reliable Delivery</h3>
+                        <p class="resi-home-owners-card-desc">We deliver concrete on schedule to keep your project
+                            moving smoothly.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="resi-home-owners-card">
+                        <h3 class="resi-home-owners-card-title">Expert Guidance</h3>
+                        <p class="resi-home-owners-card-desc">Not sure which PSI or mix you need? Our team helps you
+                            choose the right solution.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="resi-home-owners-card">
+                        <h3 class="resi-home-owners-card-title">Premium Quality Materials</h3>
+                        <p class="resi-home-owners-card-desc">Every batch is quality-tested for consistency, strength,
+                            and performance.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="resi-home-owners-card">
+                        <h3 class="resi-home-owners-card-title">Flexible Ordering</h3>
+                        <p class="resi-home-owners-card-desc">From small backyard projects to full residential
+                            developments, we deliver exactly what you need.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resi-estimate" id="calculator-vol">
+            <div class="resi-estimate-container">
+                <h2 class="resi-estimate-heading">Estimate Your Concrete Needs</h2>
+                <p class="resi-estimate-subtext">This tool is for estimating only. Please contact our team to verify
+                    your job's exact needs.</p>
+
+                <div class="resi-calc-grid">
+                    <!-- Calc Card 1 -->
+                    <div class="resi-calc-card" id="calc-slab">
+                        <div class="resi-calc-header">
+                            <h3>Slabs, Square Footings, or Walls</h3>
+                        </div>
+                        <div class="resi-calc-body">
+                            <div class="resi-calc-row">
+                                <label>Length</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-length" placeholder="" min="0" step="any"
+                                        value=2.5>
+                                    <select class="calc-length-unit">
+                                        <option value="ft" selected>Foot</option>
+                                        <option value="in">Inch</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Width</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-width" placeholder="" min="0" step="any" value=5>
+                                    <select class="calc-width-unit">
+                                        <option value="ft" selected>Foot</option>
+                                        <option value="in">Inch</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Thickness or height</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-thickness" placeholder="" min="0" step="any"
+                                        value=5>
+                                    <select class="calc-thickness-unit">
+                                        <option value="in" selected>Inch</option>
+                                        <option value="ft">Foot</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Quantity</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-qty" value=1 min=1>
+                                </div>
+                            </div>
+                            <div class="resi-calc-error"
+                                style="color: #dc2626; font-size: 14px; display: none; font-weight: 500; margin-top: 10px;">
+                            </div>
+
+                            <div class="resi-calc-result" style="display: none;">
+                                <table class="result-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Calculation Output</th>
+                                            <th>Result Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Volume in Cubic Feet</td>
+                                            <td><span class="res-cubic-feet">0.00</span> ft³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Yards</td>
+                                            <td><span class="res-cubic-yards">0.00</span> yd³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Meters</td>
+                                            <td><span class="res-cubic-meters">0.00</span> m³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight Needed (lbs and kg)</td>
+                                            <td><span class="res-weight-lbs">0.00</span> lbs / <span
+                                                    class="res-weight-kg">0.00</span> kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 60-lb Bags</td>
+                                            <td><span class="res-bags-60">0.00</span> bags</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 80-lb Bags</td>
+                                            <td><span class="res-bags-80">0.00</span> bags</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="resi-calc-btn btn-calculate">CALCULATE</button>
+                    </div>
+
+                    <!-- Calc Card 2 -->
+                    <div class="resi-calc-card" id="calc-hole">
+                        <div class="resi-calc-header">
+                            <h3>Hole, Column, or Round Footings</h3>
+                        </div>
+                        <div class="resi-calc-body">
+                            <div class="resi-calc-row">
+                                <label>Diameter</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-diameter" placeholder="" min="0" step="any"
+                                        value=2.5>
+                                    <select class="calc-diameter-unit">
+                                        <option value="ft" selected>Foot</option>
+                                        <option value="in">Inch</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Depth or height</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-depth" placeholder="" min="0" step="any" value=6>
+                                    <select class="calc-depth-unit">
+                                        <option value="in" selected>Inch</option>
+                                        <option value="ft">Foot</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Quantity</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-qty" value=1 min=1>
+                                </div>
+                            </div>
+                            <div class="resi-calc-error"
+                                style="color: #dc2626; font-size: 14px; display: none; font-weight: 500; margin-top: 10px;">
+                            </div>
+
+                            <div class="resi-calc-result" style="display: none;">
+                                <table class="result-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Calculation Output</th>
+                                            <th>Result Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Volume in Cubic Feet</td>
+                                            <td><span class="res-cubic-feet">0.00</span> ft³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Yards</td>
+                                            <td><span class="res-cubic-yards">0.00</span> yd³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Meters</td>
+                                            <td><span class="res-cubic-meters">0.00</span> m³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight Needed (lbs and kg)</td>
+                                            <td><span class="res-weight-lbs">0.00</span> lbs / <span
+                                                    class="res-weight-kg">0.00</span> kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 60-lb Bags</td>
+                                            <td><span class="res-bags-60">0.00</span> bags</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 80-lb Bags</td>
+                                            <td><span class="res-bags-80">0.00</span> bags</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="resi-calc-btn btn-calculate">CALCULATE</button>
+                    </div>
+
+                    <!-- Calc Card 3 -->
+                    <div class="resi-calc-card" id="calc-circular">
+                        <div class="resi-calc-header">
+                            <h3>Circular Slab or Tube</h3>
+                        </div>
+                        <div class="resi-calc-body">
+                            <div class="resi-calc-row">
+                                <label>Outer diameter</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-outer-dia" placeholder="" min="0" step="any"
+                                        value=5>
+                                    <select class="calc-outer-dia-unit">
+                                        <option value="ft" selected>Foot</option>
+                                        <option value="in">Inch</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Inner diameter</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-inner-dia" placeholder="" min="0" step="any"
+                                        value=4>
+                                    <select class="calc-inner-dia-unit">
+                                        <option value="ft" selected>Foot</option>
+                                        <option value="in">Inch</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Length or height</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-length-height" placeholder="" min="0" step="any"
+                                        value=5>
+                                    <select class="calc-length-height-unit">
+                                        <option value="in" selected>Inch</option>
+                                        <option value="ft">Foot</option>
+                                        <option value="yd">Yard</option>
+                                        <option value="m">Meter</option>
+                                        <option value="cm">Centimeter</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="resi-calc-row">
+                                <label>Quantity</label>
+                                <div class="resi-calc-input-wrap">
+                                    <input type="number" class="calc-qty" value=1 min=1>
+                                </div>
+                            </div>
+                            <div class="resi-calc-error"
+                                style="color: #dc2626; font-size: 14px; display: none; font-weight: 500; margin-top: 10px;">
+                            </div>
+
+                            <div class="resi-calc-result" style="display: none;">
+                                <table class="result-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Calculation Output</th>
+                                            <th>Result Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Volume in Cubic Feet</td>
+                                            <td><span class="res-cubic-feet">0.00</span> ft³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Yards</td>
+                                            <td><span class="res-cubic-yards">0.00</span> yd³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Volume in Cubic Meters</td>
+                                            <td><span class="res-cubic-meters">0.00</span> m³</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight Needed (lbs and kg)</td>
+                                            <td><span class="res-weight-lbs">0.00</span> lbs / <span
+                                                    class="res-weight-kg">0.00</span> kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 60-lb Bags</td>
+                                            <td><span class="res-bags-60">0.00</span> bags</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Number of 80-lb Bags</td>
+                                            <td><span class="res-bags-80">0.00</span> bags</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <button class="resi-calc-btn btn-calculate">CALCULATE</button>
+                    </div>
+                </div>
+
+                <div class="resi-estimate-help">
+                    <h3>Need help?</h3>
+                    <p>Our team is ready to assist with measurements, mix recommendations, and delivery scheduling.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="resi-cta">
+            <div class="resi-cta-overlay"></div>
+            <div class="resi-cta-container">
+                <h2 class="resi-cta-heading">Ready to Start Your Residential Project?</h2>
+                <p class="resi-cta-subtext">Get premium ready mix concrete delivered directly to your job site with
+                    reliable scheduling and expert support.</p>
+                <div class="resi-cta-buttons">
+                    <a href="delivery-quote.html" class="btn-resi-cta-primary">
+                        <span>REQUEST A QUOTE</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                    <a href="tel:+13526402903" class="btn-resi-cta-secondary">
+                        <span>CALL OUR TEAM</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="del-footer">
+        <!-- Background image + dark overlay -->
+        <div class="footer-bg">
+            <img src="assets/slide1.png" alt="" class="footer-bg-img">
+            <div class="footer-bg-overlay"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Col 1: Logo + Social -->
+                <div class="footer-col footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete" class="footer-logo">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="X/Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Order Ready Mix</a></li>
+                        <li><a href="#">Get a Quote</a></li>
+                        <li><a href="residential-concrete.html#calculator-vol">Volume Calculator</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blogs.html">News & Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Commercial Pours</a></li>
+                        <li><a href="#">Residential Orders</a></li>
+                        <li><a href="#">Rebar &amp; Supplies</a></li>
+                        <li><a href="#">Custom PSI Mixes</a></li>
+                        <li><a href="#">Same-Day Dispatch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Locations -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Locations</h4>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Ocala</strong>
+                        <p>3260 NW Gainesville Rd<br>Ocala, FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Crystal River</strong>
+                        <p>8778 S Jump Ct, Homosassa,<br>FL 34448</p>
+                        <a href="tel:+13526213900" class="footer-phone">(352) 621-3900</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Dunnellon</strong>
+                        <p>
+                            3260 NW Gainesville Rd Ocala,<br> FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Badge Row -->
+        <div class="footer-badges-row">
+            <div class="footer-container">
+                <div class="footer-badges">
+                    <img src="assets/footer-1.png" alt="CMEC Certification" class="footer-badge-img">
+                    <img src="assets/footer-2.png" alt="Precision Standards International" class="footer-badge-img">
+                    <img src="assets/footer-3.png" alt="ACI Certification" class="footer-badge-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-container">
+                <p class="footer-copyright">Copyright &copy; 2026 Del Zotto Concrete. All Rights Reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/script.js" defer></script>
+</body>
+
+</html>

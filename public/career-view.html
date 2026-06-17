@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career View | Del Zotto Concrete</title>
+    <!-- FontAwesome v6 for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/career.css">
+    <style>
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        .main-header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.9) 25%,
+                    rgba(255, 255, 255, 0.7) 60%,
+                    rgba(255, 255, 255, 0) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .main-header.scrolled-down {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
+        .nav-item {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: #000 !important;
+            text-decoration: none;
+            position: relative;
+            padding: 10px 0;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--text-color);
+        }
+
+        /* Premium underline glow animation */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: none;
+            box-shadow: 0 0 10px var(--primary-color-btn);
+            transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            width: 100%;
+        }
+
+        .floating-nav-container .nav-item {
+            color: #fff !important;
+        }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 10px;
+        }
+
+        .phone-icon-container {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.904);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .phone-icon {
+            font-size: 18px;
+            color: #000;
+            transform: rotate(-15deg);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .phone-label {
+            color: #000;
+        }
+
+        .burger-menu-btn {
+            color: #742A2C;
+        }
+
+        .circle-btn {
+            color: #000;
+            background-color: #00000009;
+        }
+
+        .circle-btn:hover {
+            background-color: #0000002f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/delzotto-red-logo.svg" alt="Del Zotto Concrete Logo" class="logo-img">
+            </a>
+
+            <!-- Center: Nav Items -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about-us.html" class="nav-item">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Services <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                            <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-item">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-item ">Gallery</a></li>
+                    <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right: Contact info, Order, Search, Apps grid -->
+            <div class="header-actions">
+                <div class="contact-phone">
+                    <div class="phone-icon-container">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                    </div>
+                    <div class="phone-text">
+                        <span class="phone-label">Call Us Phone</span>
+                        <a href="tel:+13526402903" class="phone-number">+1 (352) 640-2903</a>
+                    </div>
+                </div>
+
+                <a href="delivery-quote.html" class="btn-order">ORDER NOW</a>
+
+                <button class="circle-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="circle-btn apps-btn" aria-label="Apps">
+                    <i class="fa-solid fa-grip-lines"></i>
+                </button>
+
+                <!-- Burger menu for mobile/tablet (right side) -->
+                <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="floating-nav-bar" id="floatingNavBar">
+        <div class="floating-nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="#" class="nav-item">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Services<i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="nav-item ">Gallery</a></li>
+                <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <!-- Top bar of menu panel: Phone info left, search + close right -->
+        <div class="panel-top-bar">
+            <div class="panel-contact-phone">
+                <div class="panel-phone-icon-container">
+                    <i class="fa-solid fa-phone-volume panel-phone-icon"></i>
+                </div>
+                <div class="panel-phone-text">
+                    <span class="panel-phone-label">Call Us Phone</span>
+                    <a href="tel:+13526402903" class="panel-phone-number">+1 (352) 640-2903</a>
+                </div>
+            </div>
+            <div class="panel-actions-right">
+                <button class="panel-circle-btn panel-search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="panel-close-btn" id="panelCloseBtn" aria-label="Close Navigation Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <nav class="panel-nav">
+            <ul class="panel-nav-links">
+                <li><a href="index.html" class="panel-nav-item">Home</a></li>
+                <li><a href="about-us.html" class="panel-nav-item">About</a></li>
+                <li class="panel-dropdown">
+                    <div class="panel-dropdown-toggle">
+                        <span class="panel-nav-item">Services</span>
+                        <i class="fa-solid fa-chevron-down panel-arrow"></i>
+                    </div>
+                    <ul class="panel-dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="panel-nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="panel-nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="panel-nav-item active">Contact</a></li>
+            </ul>
+            <!-- Bottom: Order Now Button -->
+            <div class="panel-bottom-bar">
+                <a href="delivery-quote.html" class="panel-btn-order">ORDER NOW</a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="apps-side-panel" id="appsSidePanel">
+        <div class="apps-panel-backdrop" id="appsPanelBackdrop"></div>
+
+        <div class="apps-panel-drawer">
+            <button class="apps-panel-close" id="appsPanelClose" aria-label="Close panel">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="apps-panel-search-wrap">
+                <i class="fa-solid fa-magnifying-glass apps-panel-search-icon"></i>
+                <input type="text" class="apps-panel-search-input" placeholder="Search anything…" aria-label="Search">
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-address">
+                <div class="apps-panel-address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Ocala</span>
+                        <p class="apps-panel-address-line">3260 NW Gainesville Rd <br>Ocala, FL 34472</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Crystal River</span>
+                        <p class="apps-panel-address-line">8778 S Jump Ct,<br>Homosassa, FL 34448</p>
+                        <small class="side-panel-contact"><a href="tel:+13526213900">+1 (352) 621-3900</a></small>
+                        <a href="https://www.google.com/maps/place/8778+S+Jump+Ct,+Homosassa,+FL+34448,+USA/@28.8146522,-82.5820457,17z/data=!3m1!4b1!4m6!3m5!1s0x88e83fc114cb7f91:0x221a6147a3aee497!8m2!3d28.8146475!4d-82.5794708!16s%2Fg%2F11c60v4ptp?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Dunnellon</span>
+                        <p class="apps-panel-address-line">
+                            3260 NW Gainesville <br>Rd Ocala, FL 34475</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-socials-section">
+                <span class="apps-panel-socials-label">Follow Us</span>
+                <div class="apps-panel-socials">
+                    <a href="#" class="apps-social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="X/Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <main class="main-services">
+
+        <section class="careers-section">
+            <div class="career-view-container">
+
+                <!-- Job Header Info -->
+                <div class="career-view-header">
+                    <h2 class="career-view-title">Production Laborer</h2>
+                    <div class="job-tags center-tags">
+                        <span class="job-tag">Ocala</span>
+                        <span class="job-tag">Full-time</span>
+                    </div>
+                    <div class="apply-btn-wrap">
+                        <a href="employment-application.html" class="btn-see-position btn-apply-now">
+                            <span>APPLY NOW</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Job Details Body -->
+                <div class="career-view-body">
+
+                    <div class="detail-block">
+                        <h4 class="detail-heading">Role Description</h4>
+                        <p>Del Zotto Concrete is seeking a hardworking and reliable Production Laborer to support our
+                            concrete production team. This role helps with the production, finishing, handling, and
+                            preparation of concrete products while maintaining a clean, safe, and efficient work
+                            environment.
+                        </p>
+                    </div>
+
+                    <div class="detail-block">
+                        <h4 class="detail-heading">Key Responsibilities:</h4>
+                        <ul class="detail-bullets-list">
+                            <li>Assist with the production and finishing of concrete products</li>
+
+                            <li>Prepare forms, molds, and work areas for concrete pouring</li>
+
+                            <li>Pour, spread, level, and smooth concrete as needed</li>
+
+                            <li>Remove excess concrete and clean finished surfaces</li>
+
+                            <li>Assist with installing production elements such as steel plates, anchor bolts,
+                                reinforcements, and related components</li>
+
+                            <li>Apply sealants, hardening agents, or other finishing materials when required</li>
+
+                            <li>Remove products from forms or molds once cured</li>
+
+                            <li>Clean, maintain, and organize tools, equipment, and production areas</li>
+
+                            <li>Operate basic hand tools, power tools, and production equipment safely</li>
+
+                            <li>Assist with loading, unloading, moving, and staging materials</li>
+
+                            <li>Follow all safety procedures and company production standards</li>
+
+                            <li>Report equipment issues, material concerns, or safety hazards to supervisors</li>
+
+                            <li>Work as part of a team to meet production goals and deadlines</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-block">
+                        <h4 class="detail-heading">Qualifications:</h4>
+                        <ul class="detail-bullets-list">
+                            <li>Previous concrete, construction, manufacturing, or general labor experience preferred
+                            </li>
+
+                            <li>Ability to lift, carry, bend, stand, and work in a physically active environment</li>
+
+                            <li>Comfortable working outdoors or in a production setting</li>
+
+                            <li>Ability to follow instructions and safety procedures</li>
+
+                            <li>Dependable, punctual, and willing to learn</li>
+
+                            <li>Basic knowledge of hand tools and construction materials is a plus</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-block">
+                        <h4 class="detail-heading">Why Join WaveCrest Masonry Services?</h4>
+                        <ul class="detail-bullets-list">
+                            <li>Work on high-end, detail-driven masonry projects</li>
+                            <li>Be part of a team that values craftsmanship, quality, and client satisfaction</li>
+                            <li>Competitive salary and benefits</li>
+                            <li>Opportunities for growth and continued professional development</li>
+                            <li>Collaborative and supportive work environment</li>
+                        </ul>
+                    </div>
+                    <div class="detail-block">
+                        <h4 class="detail-heading">Ideal Candidate</h4>
+                        <p>The ideal candidate is hands-on, dependable, and willing to work hard as part of a team. This
+                            person takes pride in quality work and understands the importance of safety, consistency,
+                            and attention to detail.</p>
+                    </div>
+                    <div class="apply-btn-wrap bottom-apply">
+                        <a href="employment-application.html" class="btn-see-position btn-apply-now">
+                            <span>APPLY NOW</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <section class="resi-cta">
+            <div class="resi-cta-overlay"></div>
+            <div class="resi-cta-container">
+                <h2 class="resi-cta-heading">Ready To Start Your Concrete Project?</h2>
+                <p class="resi-cta-subtext">Get premium ready mix concrete delivered directly to your job site with
+                    reliable scheduling and expert support.</p>
+                <div class="resi-cta-buttons">
+                    <a href="delivery-quote.html" class="btn-resi-cta-primary">
+                        <span>REQUEST A QUOTE</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                    <a href="tel:+13526402903" class="btn-resi-cta-secondary">
+                        <span>CALL OUR TEAM</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+    <footer class="del-footer">
+        <!-- Background image + dark overlay -->
+        <div class="footer-bg">
+            <img src="assets/slide1.png" alt="" class="footer-bg-img">
+            <div class="footer-bg-overlay"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Col 1: Logo + Social -->
+                <div class="footer-col footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete" class="footer-logo">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="X/Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Order Ready Mix</a></li>
+                        <li><a href="#">Get a Quote</a></li>
+                        <li><a href="residential-concrete.html#calculator-vol">Volume Calculator</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blogs.html">News & Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Commercial Pours</a></li>
+                        <li><a href="#">Residential Orders</a></li>
+                        <li><a href="#">Rebar &amp; Supplies</a></li>
+                        <li><a href="#">Custom PSI Mixes</a></li>
+                        <li><a href="#">Same-Day Dispatch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Locations -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Locations</h4>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Ocala</strong>
+                        <p>3260 NW Gainesville Rd<br>Ocala, FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Crystal River</strong>
+                        <p>8778 S Jump Ct, Homosassa,<br>FL 34448</p>
+                        <a href="tel:+13526213900" class="footer-phone">(352) 621-3900</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Dunnellon</strong>
+                        <p>
+                            3260 NW Gainesville Rd Ocala,<br> FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Badge Row -->
+        <div class="footer-badges-row">
+            <div class="footer-container">
+                <div class="footer-badges">
+                    <img src="assets/footer-1.png" alt="CMEC Certification" class="footer-badge-img">
+                    <img src="assets/footer-2.png" alt="Precision Standards International" class="footer-badge-img">
+                    <img src="assets/footer-3.png" alt="ACI Certification" class="footer-badge-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-container">
+                <p class="footer-copyright">Copyright &copy; 2026 Del Zotto Concrete. All Rights Reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Lightbox Modal -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"><i
+                class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image"><i
+                class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" class="lightbox-img" id="lightboxImg">
+        </div>
+    </div>
+    <script src="script/script.js" defer></script>
+    <script src="script/dynamic.js" defer></script>
+</body>
+
+</html>

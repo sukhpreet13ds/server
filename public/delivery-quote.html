@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Quote | Del Zotto Concrete</title>
+    <!-- FontAwesome v6 for modern icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/career.css">
+    <style>
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        }
+
+        .main-header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.98) 0%,
+                    rgba(255, 255, 255, 0.9) 25%,
+                    rgba(255, 255, 255, 0.7) 60%,
+                    rgba(255, 255, 255, 0) 100%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .main-header.scrolled-down {
+            transform: translateY(-100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
+        .nav-item {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: #000 !important;
+            text-decoration: none;
+            position: relative;
+            padding: 10px 0;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: var(--text-color);
+        }
+
+        /* Premium underline glow animation */
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: none;
+            box-shadow: 0 0 10px var(--primary-color-btn);
+            transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            width: 100%;
+        }
+
+        .floating-nav-container .nav-item {
+            color: #fff !important;
+        }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 10px;
+        }
+
+        .phone-icon-container {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.904);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .phone-icon {
+            font-size: 18px;
+            color: #000;
+            transform: rotate(-15deg);
+            transition: transform 0.3s ease;
+        }
+
+        .phone-number {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .phone-label {
+            color: #000;
+        }
+
+        .burger-menu-btn {
+            color: #742A2C;
+        }
+
+        .circle-btn {
+            color: #000;
+            background-color: #00000009;
+        }
+
+        .circle-btn:hover {
+            background-color: #0000002f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header" id="mainHeader">
+        <div class="header-container">
+            <!-- Left: Logo -->
+            <a href="index.html" class="logo-link">
+                <img src="assets/delzotto-red-logo.svg" alt="Del Zotto Concrete Logo" class="logo-img">
+            </a>
+
+            <!-- Center: Nav Items -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-item ">Home</a></li>
+                    <li><a href="about-us.html" class="nav-item">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-item">Services <i
+                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                            <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="projects.html" class="nav-item">Projects</a></li>
+                    <li><a href="gallery.html" class="nav-item">Gallery</a></li>
+                    <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right: Contact info, Order, Search, Apps grid -->
+            <div class="header-actions">
+                <div class="contact-phone">
+                    <div class="phone-icon-container">
+                        <i class="fa-solid fa-phone-volume phone-icon"></i>
+                    </div>
+                    <div class="phone-text">
+                        <span class="phone-label">Call Us Phone</span>
+                        <a href="tel:+13526402903" class="phone-number">+1 (352) 640-2903</a>
+                    </div>
+                </div>
+
+                <a href="delivery-quote.html" class="btn-order">ORDER NOW</a>
+
+                <button class="circle-btn search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <button class="circle-btn apps-btn" aria-label="Apps">
+                    <i class="fa-solid fa-grip-lines"></i>
+                </button>
+
+                <!-- Burger menu for mobile/tablet (right side) -->
+                <button class="burger-menu-btn" id="burgerMenuBtn" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="floating-nav-bar" id="floatingNavBar">
+        <div class="floating-nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-item">Home</a></li>
+                <li><a href="about-us.html" class="nav-item">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-item">Services<i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="nav-item ">Gallery</a></li>
+                <li><a href="contact-us.html" class="nav-item">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <!-- Top bar of menu panel: Phone info left, search + close right -->
+        <div class="panel-top-bar">
+            <div class="panel-contact-phone">
+                <div class="panel-phone-icon-container">
+                    <i class="fa-solid fa-phone-volume panel-phone-icon"></i>
+                </div>
+                <div class="panel-phone-text">
+                    <span class="panel-phone-label">Call Us Phone</span>
+                    <a href="tel:+13526402903" class="panel-phone-number">+1 (352) 640-2903</a>
+                </div>
+            </div>
+            <div class="panel-actions-right">
+                <button class="panel-circle-btn panel-search-btn" aria-label="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="panel-close-btn" id="panelCloseBtn" aria-label="Close Navigation Menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Middle: Nav Links -->
+        <nav class="panel-nav">
+            <ul class="panel-nav-links">
+                <li><a href="index.html" class="panel-nav-item">Home</a></li>
+                <li><a href="about-us.html" class="panel-nav-item">About</a></li>
+                <li class="panel-dropdown">
+                    <div class="panel-dropdown-toggle">
+                        <span class="panel-nav-item">Services</span>
+                        <i class="fa-solid fa-chevron-down panel-arrow"></i>
+                    </div>
+                    <ul class="panel-dropdown-menu">
+                        <li><a href="residential-concrete.html">Residential Concrete</a></li>
+                        <li><a href="commercial-concrete.html">Commercial Concrete</a></li>
+                    </ul>
+                </li>
+                <li><a href="projects.html" class="panel-nav-item">Projects</a></li>
+                <li><a href="gallery.html" class="panel-nav-item">Gallery</a></li>
+                <li><a href="contact-us.html" class="panel-nav-item active">Contact</a></li>
+            </ul>
+            <!-- Bottom: Order Now Button -->
+            <div class="panel-bottom-bar">
+                <a href="delivery-quote.html" class="panel-btn-order">ORDER NOW</a>
+            </div>
+        </nav>
+
+
+    </div>
+
+    <div class="apps-side-panel" id="appsSidePanel">
+        <div class="apps-panel-backdrop" id="appsPanelBackdrop"></div>
+
+        <div class="apps-panel-drawer">
+            <button class="apps-panel-close" id="appsPanelClose" aria-label="Close panel">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="apps-panel-search-wrap">
+                <i class="fa-solid fa-magnifying-glass apps-panel-search-icon"></i>
+                <input type="text" class="apps-panel-search-input" placeholder="Search anything…" aria-label="Search">
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-address">
+                <div class="apps-panel-address-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Ocala</span>
+                        <p class="apps-panel-address-line">3260 NW Gainesville Rd <br>Ocala, FL 34472</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Crystal River</span>
+                        <p class="apps-panel-address-line">8778 S Jump Ct,<br>Homosassa, FL 34448</p>
+                        <small class="side-panel-contact"><a href="tel:+13526213900">+1 (352) 621-3900</a></small>
+                        <a href="https://www.google.com/maps/place/8778+S+Jump+Ct,+Homosassa,+FL+34448,+USA/@28.8146522,-82.5820457,17z/data=!3m1!4b1!4m6!3m5!1s0x88e83fc114cb7f91:0x221a6147a3aee497!8m2!3d28.8146475!4d-82.5794708!16s%2Fg%2F11c60v4ptp?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div><br>
+                    <div class="apps-panel-address-text">
+                        <span class="apps-panel-address-label">Dunnellon</span>
+                        <p class="apps-panel-address-line">
+                            3260 NW Gainesville <br>Rd Ocala, FL 34475</p>
+                        <small class="side-panel-contact"><a href="tel:+13526402903">+1 (352) 640-2903</a></small>
+                        <a href="https://www.google.com/maps/place/3260+NW+Gainesville+Rd,+Ocala,+FL+34475,+USA/@29.2207513,-82.1519572,17z/data=!3m1!4b1!4m5!3m4!1s0x88e62b6d4f57bafd:0xb9352497a857b69d!8m2!3d29.2207466!4d-82.1493823?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener" class="apps-panel-map-link">View on Map <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apps-panel-divider"></div>
+
+            <div class="apps-panel-socials-section">
+                <span class="apps-panel-socials-label">Follow Us</span>
+                <div class="apps-panel-socials">
+                    <a href="#" class="apps-social-btn" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="X/Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="apps-social-btn" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main-services">
+
+        <section class="mix-form-section">
+            <div class="quote-form-wrapper">
+                <div class="quote-form-header">
+                    <span class="quote-form-subtitle">GET A CUSTOM QUOTE</span>
+                    <h2 class="quote-form-title">Ready Mix Concrete Request</h2>
+                </div>
+
+                <!-- Step Progress Indicator -->
+                <div class="step-indicator-wrapper">
+                    <div class="step-indicator active" id="indicatorStep1">
+                        <div class="step-num">1</div>
+                        <div class="step-label">Order Details</div>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step-indicator" id="indicatorStep2">
+                        <div class="step-num">2</div>
+                        <div class="step-label">Contact Information</div>
+                    </div>
+                </div>
+
+                <form id="quoteRequestForm" class="quote-request-form">
+                    <!-- STEP 1: ORDER DETAILS -->
+                    <div class="form-step active" id="formStep1">
+
+                        <h3 class="form-section-title">Delivery Location</h3>
+                        <div class="form-grid">
+                            <div class="form-group span-2">
+                                <label for="addressLine1">Delivery Address *</label>
+                                <input type="text" id="addressLine1" name="addressLine1" placeholder="Address Line 1"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City *</label>
+                                <input type="text" id="city" name="city" placeholder="City" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State *</label>
+                                <select id="state" name="state" required>
+                                    <option value="" disabled selected>--- Select state ---</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="SC">South Carolina</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code</label>
+                                <input type="text" id="zipCode" name="zipCode" placeholder="Zip Code">
+                            </div>
+                        </div>
+
+                        <h3 class="form-section-title">Requested Delivery or Pickup Date / Time *</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="deliveryDate">Date *</label>
+                                <input type="date" id="deliveryDate" name="deliveryDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="deliveryTime">Time *</label>
+                                <input type="time" id="deliveryTime" name="deliveryTime" required>
+                            </div>
+                        </div>
+
+                        <h3 class="form-section-title">Ready Mix Specifications</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="mixPsi">What PSI do you need?</label>
+                                <select id="mixPsi" name="mixPsi">
+                                    <option value="Unsure?">Unsure?</option>
+                                    <option value="2500 psi">2500 psi</option>
+                                    <option value="3000 psi">3000 psi</option>
+                                    <option value="3500 psi">3500 psi</option>
+                                    <option value="4000 psi">4000 psi</option>
+                                    <option value="4500 psi">4500 psi</option>
+                                    <option value="5000 psi">5000 psi</option>
+                                    <option value="6000 psi">6000 psi</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="needFiber">Do you need Fiber?</label>
+                                <select id="needFiber" name="needFiber">
+                                    <option value="Include Fiber">Include Fiber</option>
+                                    <option value="No Fiber">No Fiber</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="readyMixQty">How much Ready Mix do you need? *</label>
+                                <input type="number" id="readyMixQty" name="readyMixQty" min="1" step="0.5"
+                                    placeholder="How many yards?" required>
+                                <span class="input-helper">Use our calculator below to estimate your order.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="needReinforcing">Need Reinforcing or Supplies?</label>
+                                <select id="needReinforcing" name="needReinforcing">
+                                    <option value="No I have everything I need for the pour" selected>No I have
+                                        everything I need for the pour</option>
+                                    <option value="Yes Show me what you got">Yes Show me what you got</option>
+                                    <option value="I'm not sure what I need! Please Contact me!">I'm not sure what I
+                                        need! Please Contact me!</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Section: Reinforcing Products (shown when 'Yes Show me what you got' is selected) -->
+                        <div class="reinforcing-products-section" id="reinforcingProductsSection"
+                            style="display: none;">
+                            <h3 class="form-section-title products-section-title">Reinforcing & Supplies</h3>
+
+                            <div class="products-list">
+                                <!-- Product 1: Corner Bars & Dowels -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-1.jpg" alt="Corner Bars & Dowels" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Corner Bars & Dowels</h4>
+                                        <div class="product-fields-grid rebar-fields">
+                                            <div class="product-field">
+                                                <label for="rebarSize">Select Rebar Size</label>
+                                                <select id="rebarSize" name="rebarSize">
+                                                    <option value="#3 Rebar (3/8\" Grade 40)" selected>#3 Rebar (3/8"
+                                                        Grade 40)</option>
+                                                    <option value="#4 Rebar (1/2\" Grade 60)">#4 Rebar (1/2" Grade 60)
+                                                    </option>
+                                                    <option value="#5 Rebar (5/8\" Grade 60)">#5 Rebar (5/8" Grade 60)
+                                                    </option>
+                                                    <option value="#6 Rebar (3/4\" Grade 60)">#6 Rebar (3/4" Grade 60)
+                                                    </option>
+                                                    <option value="#7 Rebar (7/8\" Grade 60)">#7 Rebar (7/8" Grade 60)
+                                                    </option>
+                                                    <option value="#8 Rebar (1\" Grade 60)">#8 Rebar (1" Grade 60)
+                                                    </option>
+                                                    <option value="#9 Rebar (1.128\" Grade 60)">#9 Rebar (1.128" Grade
+                                                        60)</option>
+                                                    <option value="#10 Rebar (1.270\" Grade 60)">#10 Rebar (1.270" Grade
+                                                        60)</option>
+                                                </select>
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="rebarLength">Rebar Length</label>
+                                                <select id="rebarLength" name="rebarLength">
+                                                    <option value="20' Available in Stock" selected>20' Available in
+                                                        Stock</option>
+                                                    <option value="18' Custom Cut">18' Custom Cut</option>
+                                                    <option value="16' Custom Cut">16' Custom Cut</option>
+                                                    <option value="14' Custom Cut">14' Custom Cut</option>
+                                                    <option value="12' Custom Cut">12' Custom Cut</option>
+                                                    <option value="10' Custom Cut">10' Custom Cut</option>
+                                                    <option value="8' Custom Cut">8' Custom Cut</option>
+                                                    <option value="6' Custom Cut">6' Custom Cut</option>
+                                                    <option value="4' Custom Cut">4' Custom Cut</option>
+                                                    <option value="2' Custom Cut">2' Custom Cut</option>
+                                                </select>
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="rebarQty">Rebar Quantity (Pieces)</label>
+                                                <input type="number" id="rebarQty" name="rebarQty" min="0"
+                                                    placeholder="How many pieces of rebar?">
+                                                <span class="input-helper">Describe any custom length or quantity needs
+                                                    your job has.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 2: Wire Mesh -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-2.jpg" alt="Wire Mesh" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Wire Mesh</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="wireMeshRolls">5' X 150' Roll of 6" X 6" Wire Mesh</label>
+                                                <input type="number" id="wireMeshRolls" name="wireMeshRolls" min="0"
+                                                    placeholder="How many rolls of mesh?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="wireMeshSheets">8' X 20' Sheets of 10 Gauge 6" X 6" Wire
+                                                    Mesh</label>
+                                                <input type="number" id="wireMeshSheets" name="wireMeshSheets" min="0"
+                                                    placeholder="How many sheets?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 3: Foundation Chairs -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-3.jpg" alt="Foundation Chairs" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Foundation Chairs</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="twoRodChairs">2-Rod Foundation Chairs</label>
+                                                <input type="number" id="twoRodChairs" name="twoRodChairs" min="0"
+                                                    placeholder="How Many Packs of 100?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="threeRodChairs">3-Rod Foundation Chairs</label>
+                                                <input type="number" id="threeRodChairs" name="threeRodChairs" min="0"
+                                                    placeholder="How Many Packs of 100?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 4: Tie Wire & Tools -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-4.jpg" alt="Tie Wire & Tools" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Tie Wire & Tools</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="barTies">6" 17 Gauge Bar Ties</label>
+                                                <input type="number" id="barTies" name="barTies" min="0"
+                                                    placeholder="How many 4-packs of 1000?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="wireTwisters">Auto Tie-Wire Twisters</label>
+                                                <input type="number" id="wireTwisters" name="wireTwisters" min="0"
+                                                    placeholder="How many?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 5: Poly -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-5.jpg" alt="Poly" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Poly</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="polyFilm">6-Mil 20' X 100' Clear Poly Film</label>
+                                                <input type="number" id="polyFilm" name="polyFilm" min="0"
+                                                    placeholder="How many rolls?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="polyTape">Rolls of Red Poly Tape</label>
+                                                <input type="number" id="polyTape" name="polyTape" min="0"
+                                                    placeholder="How many rolls?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 6: Anchor Bolts -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-6.jpg" alt="Anchor Bolts" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Anchor Bolts</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="anchorBolts6">1/2" X 6" Anchor Bolts W/Washer & Nuts</label>
+                                                <input type="number" id="anchorBolts6" name="anchorBolts6" min="0"
+                                                    placeholder="How many boxes of 50?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="anchorBolts10">1/2" X 10" Anchor Bolts W/Washer &
+                                                    Nuts</label>
+                                                <input type="number" id="anchorBolts10" name="anchorBolts10" min="0"
+                                                    placeholder="How many boxes of 50?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 7: Expansion Joints -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-7.jpg" alt="Expansion Joints" class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Expansion Joints</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="expansionJoints">1/2" X 3-1/2" X 10' Black Expansion
+                                                    Joint</label>
+                                                <input type="number" id="expansionJoints" name="expansionJoints" min="0"
+                                                    placeholder="How many packages of 10?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 8: Curing Compound & Sprayers -->
+                                <div class="product-card-item">
+                                    <div class="product-img-wrap">
+                                        <img src="assets/drop-8.jpg" alt="Curing Compound & Sprayers"
+                                            class="product-img">
+                                    </div>
+                                    <div class="product-details">
+                                        <h4 class="product-title">Curing Compound & Sprayers</h4>
+                                        <div class="product-fields-grid">
+                                            <div class="product-field">
+                                                <label for="curingCompound">5-Gallon Pail of Curing Compound</label>
+                                                <input type="number" id="curingCompound" name="curingCompound" min="0"
+                                                    placeholder="How many pails?">
+                                            </div>
+                                            <div class="product-field">
+                                                <label for="curingSprayer">Industrial Concrete Sprayer</label>
+                                                <input type="number" id="curingSprayer" name="curingSprayer" min="0"
+                                                    placeholder="How many sprayers?">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Next Navigation -->
+                        <div class="form-navigation">
+                            <button type="button" class="btn-step-next" id="btnNextStep1">
+                                <span>Next - Contact Information</span>
+                                <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: CONTACT INFORMATION -->
+                    <div class="form-step" id="formStep2">
+                        <h3 class="form-section-title">Contact Info</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number *</label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessName">Business Name</label>
+                                <input type="text" id="businessName" name="businessName" placeholder="Business Name">
+                            </div>
+                            <div class="form-group">
+                                <label poNumber>PO Number</label>
+                                <input type="text" id="poNumber" name="poNumber" placeholder="PO Number">
+                            </div>
+                            <div class="form-group span-2">
+                                <label for="specialInstructions">Any Special Instructions?</label>
+                                <textarea id="specialInstructions" name="specialInstructions" rows="4"
+                                    placeholder="Any special instructions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Back and Submit Navigation -->
+                        <div class="form-navigation split-nav">
+                            <button type="button" class="btn-step-back" id="btnBackStep2">
+                                <div class="arrow-circle"><i class="fa-solid fa-arrow-left-long"></i></div>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn-step-submit" id="btnSubmitQuote">
+                                <span>Submit Quote Request</span>
+                                <div class="arrow-circle"><i class="fa-solid fa-paper-plane"></i></div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+
+
+        <section class="resi-cta">
+            <div class="resi-cta-overlay"></div>
+            <div class="resi-cta-container">
+                <h2 class="resi-cta-heading">Ready To Start Your Concrete Project?</h2>
+                <p class="resi-cta-subtext">Get premium ready mix concrete delivered directly to your job site with
+                    reliable scheduling and expert support.</p>
+                <div class="resi-cta-buttons">
+                    <a href="delivery-quote.html" class="btn-resi-cta-primary">
+                        <span>REQUEST A QUOTE</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                    <a href="tel:+13526402903" class="btn-resi-cta-secondary">
+                        <span>CALL OUR TEAM</span>
+                        <div class="arrow-circle"><i class="fa-solid fa-arrow-right-long fa-rotate-by"
+                                style="--fa-rotate-angle: -45deg;"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+    <footer class="del-footer">
+        <!-- Background image + dark overlay -->
+        <div class="footer-bg">
+            <img src="assets/slide1.png" alt="" class="footer-bg-img">
+            <div class="footer-bg-overlay"></div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- Col 1: Logo + Social -->
+                <div class="footer-col footer-brand-col">
+                    <a href="index.html" class="footer-logo-link">
+                        <img src="assets/delzotto-logo.svg" alt="Del Zotto Concrete" class="footer-logo">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-btn" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="X/Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="footer-social-btn" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Order Ready Mix</a></li>
+                        <li><a href="#">Get a Quote</a></li>
+                        <li><a href="residential-concrete.html#calculator-vol">Volume Calculator</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="blogs.html">News & Articles</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Services</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#">Commercial Pours</a></li>
+                        <li><a href="#">Residential Orders</a></li>
+                        <li><a href="#">Rebar &amp; Supplies</a></li>
+                        <li><a href="#">Custom PSI Mixes</a></li>
+                        <li><a href="#">Same-Day Dispatch</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Locations -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Locations</h4>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Ocala</strong>
+                        <p>3260 NW Gainesville Rd<br>Ocala, FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Crystal River</strong>
+                        <p>8778 S Jump Ct, Homosassa,<br>FL 34448</p>
+                        <a href="tel:+13526213900" class="footer-phone">(352) 621-3900</a>
+                    </div>
+                    <div class="footer-location-block">
+                        <strong class="footer-location-city">Dunnellon</strong>
+                        <p>
+                            3260 NW Gainesville Rd Ocala,<br> FL 34475</p>
+                        <a href="tel:+13526402903" class="footer-phone">(352) 640-2903</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certification Badge Row -->
+        <div class="footer-badges-row">
+            <div class="footer-container">
+                <div class="footer-badges">
+                    <img src="assets/footer-1.png" alt="CMEC Certification" class="footer-badge-img">
+                    <img src="assets/footer-2.png" alt="Precision Standards International" class="footer-badge-img">
+                    <img src="assets/footer-3.png" alt="ACI Certification" class="footer-badge-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bar -->
+        <div class="footer-bottom-bar">
+            <div class="footer-container">
+                <p class="footer-copyright">Copyright &copy; 2026 Del Zotto Concrete. All Rights Reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Lightbox Modal -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox"><i
+                class="fa-solid fa-xmark"></i></button>
+        <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Next image"><i
+                class="fa-solid fa-chevron-right"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" class="lightbox-img" id="lightboxImg">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('quoteRequestForm');
+            const step1 = document.getElementById('formStep1');
+            const step2 = document.getElementById('formStep2');
+            const ind1 = document.getElementById('indicatorStep1');
+            const ind2 = document.getElementById('indicatorStep2');
+            const btnNext = document.getElementById('btnNextStep1');
+            const btnBack = document.getElementById('btnBackStep2');
+            const reinforcingSelect = document.getElementById('needReinforcing');
+            const reinforcingSection = document.getElementById('reinforcingProductsSection');
+
+            // Toggle reinforcing supplies section based on selection
+            reinforcingSelect.addEventListener('change', () => {
+                if (reinforcingSelect.value === 'Yes Show me what you got') {
+                    reinforcingSection.style.display = 'block';
+                } else {
+                    reinforcingSection.style.display = 'none';
+                }
+            });
+
+            // Validate fields on the active step
+            function validateStep1() {
+                const requiredInputs = step1.querySelectorAll('[required]');
+                let isValid = true;
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add('input-error');
+                    } else {
+                        input.classList.remove('input-error');
+                    }
+                });
+                return isValid;
+            }
+
+            // Next Step
+            btnNext.addEventListener('click', () => {
+                if (validateStep1()) {
+                    step1.classList.remove('active');
+                    step2.classList.add('active');
+                    ind1.classList.remove('active');
+                    ind1.classList.add('completed');
+                    ind2.classList.add('active');
+                    window.scrollTo({ top: document.querySelector('.mix-form-section').offsetTop - 120, behavior: 'smooth' });
+                } else {
+                    // Alert user of missing fields
+                    const firstError = step1.querySelector('.input-error');
+                    if (firstError) {
+                        firstError.focus();
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+
+            // Back Step (maintaining values)
+            btnBack.addEventListener('click', () => {
+                step2.classList.remove('active');
+                step1.classList.add('active');
+                ind2.classList.remove('active');
+                ind1.classList.remove('completed');
+                ind1.classList.add('active');
+                window.scrollTo({ top: document.querySelector('.mix-form-section').offsetTop - 120, behavior: 'smooth' });
+            });
+
+            // Form Submit handler
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                // Perform Step 2 validation
+                const requiredInputs = step2.querySelectorAll('[required]');
+                let isValid = true;
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add('input-error');
+                    } else {
+                        input.classList.remove('input-error');
+                    }
+                });
+
+                if (isValid) {
+                    // Send to the API (defined in dynamic.js). Falls back gracefully.
+                    let ok = true;
+                    if (window.delzotto && window.delzotto.submitQuote) {
+                        ok = await window.delzotto.submitQuote(form);
+                    }
+                    if (!ok) { alert('Sorry, something went wrong submitting your request. Please try again.'); return; }
+                    alert('Quote request submitted successfully!');
+                    form.reset();
+                    // Reset to step 1
+                    step2.classList.remove('active');
+                    step1.classList.add('active');
+                    ind2.classList.remove('active');
+                    ind1.classList.remove('completed');
+                    ind1.classList.add('active');
+                    reinforcingSection.style.display = 'none';
+                    window.scrollTo({ top: document.querySelector('.mix-form-section').offsetTop - 120, behavior: 'smooth' });
+                } else {
+                    const firstError = step2.querySelector('.input-error');
+                    if (firstError) {
+                        firstError.focus();
+                    }
+                }
+            });
+
+            // Remove error class on input
+            form.querySelectorAll('input, select, textarea').forEach(element => {
+                element.addEventListener('input', () => {
+                    element.classList.remove('input-error');
+                });
+            });
+        });
+    </script>
+    <script src="script/script.js" defer></script>
+    <script src="script/dynamic.js" defer></script>
+</body>
+
+</html>
