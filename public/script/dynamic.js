@@ -211,7 +211,7 @@
   }
 
   function initProjectViewPage() {
-    const container = $('.wwa-container');
+    const container = $('.project-child-section');
     const grid = $('.project-child-section');
     if (!container || !grid) return;
     const slug = param('cat') || 'commercial-concrete';
@@ -225,8 +225,8 @@
       // next line — a 2-up layout on desktop. Reuses the page's grid classes.
       const projects = subs.flatMap((s) => s.projects || []);
       container.innerHTML = projects.length
-        ? `<div class="project-child-section">${projects.map(projectCardHTML).join('')}</div>`
-        : `<div class="project-child-section"><p class="project-card-title">Projects coming soon.</p></div>`;
+  ? projects.map(projectCardHTML).join('')
+  : '<p class="project-card-title">Projects coming soon.</p>';
     }).catch(console.error);
   }
 
