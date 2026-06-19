@@ -10,6 +10,23 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style/style.css">
+    <style>
+        .project-loader {
+    width: 50px;
+    height: 50px;
+    margin: 60px auto;
+    border: 4px solid #e5e5e5;
+    border-top: 4px solid #c8102e;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -247,57 +264,7 @@
                 </div>
 
                 <div class="project-child-section">
-                    <!-- Card 1 -->
-                    <a href="project-nested.html" class="project-view-card">
-                        <div class="project-card-image-wrap">
-                            <img src="assets/pro-2.jpg" alt="Ocala Plant (Batch Plant)" class="project-card-img">
-                            <div class="project-card-hover-overlay">
-                                <div class="project-card-arrow-circle">
-                                    <i class="fa-solid fa-arrow-right-long fa-rotate-by"
-                                        style="--fa-rotate-angle: -45deg;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-category">Architecture / 2025</span>
-                            <h3 class="project-card-title">Ocala Plant (Batch Plant)</h3>
-                        </div>
-                    </a>
-                    <!-- Card 2 -->
-                    <a href="project-nested.html" class="project-view-card">
-                        <div class="project-card-image-wrap">
-                            <img src="assets/pro-1.jpg" alt="Homosassa Plant" class="project-card-img">
-                            <div class="project-card-hover-overlay">
-                                <div class="project-card-arrow-circle">
-                                    <i class="fa-solid fa-arrow-right-long fa-rotate-by"
-                                        style="--fa-rotate-angle: -45deg;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-category">Architecture / 2025</span>
-                            <h3 class="project-card-title">Homosassa Plant</h3>
-                        </div>
-                    </a>
-
-
-
-                    <!-- Card 3 -->
-                    <a href="project-nested.html" class="project-view-card">
-                        <div class="project-card-image-wrap">
-                            <img src="assets/pro-3.jpg" alt="Ocala Plant" class="project-card-img">
-                            <div class="project-card-hover-overlay">
-                                <div class="project-card-arrow-circle">
-                                    <i class="fa-solid fa-arrow-right-long fa-rotate-by"
-                                        style="--fa-rotate-angle: -45deg;"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card-info">
-                            <span class="project-card-category">Architecture / 2025</span>
-                            <h3 class="project-card-title">Ocala Plant</h3>
-                        </div>
-                    </a>
+                     <div class="project-loader"></div>
                 </div>
 
             </div>
